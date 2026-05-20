@@ -175,6 +175,38 @@
       background: url('assets/hero_background.svg') center/cover;
     }
 
+    .hero-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--gold-pale) 0%, rgba(212, 175, 55, 0) 65%);
+      border-radius: 50%;
+      z-index: 0;
+      opacity: 0.5;
+      pointer-events: none;
+      animation: glowPulse 8s ease-in-out infinite alternate;
+    }
+    .hero-glow-1 { top: -100px; left: -100px; }
+    .hero-glow-2 { bottom: -100px; right: -100px; animation-delay: -4s; }
+    
+    @keyframes glowPulse {
+      0% { transform: scale(0.8); opacity: 0.2; }
+      100% { transform: scale(1.2); opacity: 0.6; }
+    }
+
+    .hero-star {
+      position: absolute;
+      color: var(--gold);
+      z-index: 0;
+      pointer-events: none;
+      animation: starTwinkle 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes starTwinkle {
+      0% { opacity: 0.1; transform: scale(0.8) rotate(0deg); }
+      100% { opacity: 0.6; transform: scale(1.2) rotate(20deg); }
+    }
+
     .hero-ornament {
       position: absolute;
       top: 120px;
@@ -294,22 +326,37 @@
     /* TRUST BAR */
     .trust-bar {
       background: var(--ink);
-      padding: 1.5rem 2rem;
+      padding: 1.5rem 0;
+      overflow: hidden;
+      display: flex;
+      white-space: nowrap;
+    }
+    
+    .trust-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      padding-right: 4rem;
     }
 
-    .trust-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      text-align: center;
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .trust-item {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
     }
 
@@ -944,13 +991,146 @@
       transform: rotate(45deg);
     }
 
+    /* HAMBURGER & MOBILE MENU */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: 24px;
+      height: 18px;
+      position: relative;
+      z-index: 1000;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--ink);
+      position: absolute;
+      left: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+      border-radius: 2px;
+    }
+    
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 8px; }
+    .hamburger span:nth-child(3) { top: 16px; }
+    
+    .hamburger.open span:nth-child(1) {
+      top: 8px;
+      transform: rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      top: 8px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(26, 18, 8, 0.4);
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 90px;
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu-inner {
+      background: var(--cream);
+      width: 90%;
+      max-width: 400px;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .mobile-menu.active .mobile-menu-inner {
+      transform: translateY(0);
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+      text-align: left;
+      display: block;
+    }
+
+    .mobile-menu a:not(.nav-cta):hover {
+      background: var(--gold-pale);
+    }
+
+    .mobile-menu .nav-cta {
+      background: var(--gold) !important;
+      color: var(--ink) !important;
+      text-align: center;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 600 !important;
+      border: 1.5px solid var(--gold);
+    }
+    .mobile-menu .nav-cta:hover {
+      background: var(--gold-dark) !important;
+      color: #fff !important;
+      border-color: var(--gold-dark);
+    }
+
     @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        display: none !important;
+      }
       .nav-inner {
         padding: 0 1.25rem;
         height: 75px;
+        position: relative;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        width: auto;
       }
       .nav-logo img {
         height: 50px;
+      }
+      .nav-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
       }
       .nav-brand-main {
         font-size: 18px;
@@ -958,19 +1138,21 @@
       .nav-brand-sub {
         font-size: 7px;
       }
-      .nav-links li:not(:last-child) {
-        display: none;
-      }
-      .nav-links {
-        gap: 0;
-      }
       
       section {
         padding: 4.5rem 1.25rem;
       }
 
       .hero {
-        padding: 120px 1.25rem 4rem;
+        padding: 90px 1.25rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      .hero-ornament {
+        display: none;
       }
       
       .hero-title {
@@ -991,8 +1173,18 @@
         justify-content: center;
       }
       
+      .trust-bar {
+        padding: 0.6rem 0;
+      }
+      .trust-text {
+        font-size: 10px;
+      }
+      .trust-icon {
+        font-size: 14px;
+      }
       .trust-inner {
-        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding-right: 2rem;
       }
 
       .how-inner,
@@ -1033,9 +1225,7 @@
     }
     
     @media (max-width: 480px) {
-      .trust-inner {
-        grid-template-columns: 1fr;
-      }
+      /* .trust-inner removed for marquee */
       
       .cat-grid {
         grid-template-columns: 1fr;
@@ -1078,12 +1268,44 @@
         <li><a href="#about">About</a></li>
         <li><a href="#order" class="nav-cta">Order Now</a></li>
       </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="#categories" class="mobile-link">Collections</a>
+      <a href="#gallery" class="mobile-link">Gallery</a>
+      <a href="#how-it-works" class="mobile-link">How It Works</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#order" class="nav-cta mobile-link">
+        Order Now
+        <svg style="display:inline; width:14px; height:14px; vertical-align:middle;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
+    
+    <!-- Decorative Elements -->
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-star" style="top: 15%; left: 10%; font-size: 20px; animation-delay: 0s;">✦</div>
+    <div class="hero-star" style="top: 75%; right: 12%; font-size: 32px; animation-delay: 1.5s;">✦</div>
+    <div class="hero-star" style="top: 25%; right: 8%; font-size: 14px; animation-delay: 3s;">✦</div>
+    <div class="hero-star" style="top: 85%; left: 15%; font-size: 18px; animation-delay: 0.7s;">✦</div>
+
     <div class="hero-content">
       <div class="hero-eyebrow">Your Design, Our Craft</div>
       <h1 class="hero-title">Crafted for<br><em>every occasion</em></h1>
@@ -1103,14 +1325,27 @@
 
   <!-- TRUST BAR -->
   <div class="trust-bar">
-    <div class="trust-inner">
-      <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">BIS Hallmarked Gold</span></div>
-      <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Custom Design from
-          Reference</span></div>
-      <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Gold &amp; Silver
-          Specialists</span></div>
-      <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">WhatsApp Order &amp;
-          Enquiry</span></div>
+    <div class="trust-marquee">
+      <!-- First Copy -->
+      <div class="trust-inner">
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">BIS Hallmarked Gold</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Custom Design from Reference</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Gold &amp; Silver Specialists</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">WhatsApp Order &amp; Enquiry</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">100% Transparency &amp; Purity</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Handcrafted with Devotion</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Generations of Trust</span></div>
+      </div>
+      <!-- Second Copy (for seamless loop) -->
+      <div class="trust-inner" aria-hidden="true">
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">BIS Hallmarked Gold</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Custom Design from Reference</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Gold &amp; Silver Specialists</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">WhatsApp Order &amp; Enquiry</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">100% Transparency &amp; Purity</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Handcrafted with Devotion</span></div>
+        <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Generations of Trust</span></div>
+      </div>
     </div>
   </div>
 
@@ -1468,6 +1703,29 @@
   </a>
 
   <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu() {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    if(hamburger) {
+      hamburger.addEventListener('click', toggleMenu);
+    }
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+      });
+    });
+
     function handleFile(input) {
       const name = input.files[0]?.name;
       if (name) {
