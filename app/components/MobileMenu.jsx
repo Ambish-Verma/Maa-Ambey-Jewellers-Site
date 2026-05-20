@@ -1,3 +1,5 @@
+'use client'
+
 export default function MobileMenu({ menuOpen, closeMenu }) {
   return (
     <div className={`mobile-menu${menuOpen ? ' active' : ''}`} id="mobile-menu">

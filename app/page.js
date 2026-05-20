@@ -1,6 +1,4 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import MobileMenu from './components/MobileMenu'
+import NavWrapper from './components/NavWrapper'
 import Hero from './components/Hero'
 import TrustBar from './components/TrustBar'
 import Categories from './components/Categories'
@@ -11,23 +9,10 @@ import About from './components/About'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
 
-function App() {
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  const toggleMenu = () => {
-    setMenuOpen(prev => !prev)
-    document.body.style.overflow = !menuOpen ? 'hidden' : ''
-  }
-
-  const closeMenu = () => {
-    setMenuOpen(false)
-    document.body.style.overflow = ''
-  }
-
+export default function Home() {
   return (
     <>
-      <Navbar menuOpen={menuOpen} toggleMenu={toggleMenu} />
-      <MobileMenu menuOpen={menuOpen} closeMenu={closeMenu} />
+      <NavWrapper />
       <Hero />
       <TrustBar />
       <Categories />
@@ -40,5 +25,3 @@ function App() {
     </>
   )
 }
-
-export default App
