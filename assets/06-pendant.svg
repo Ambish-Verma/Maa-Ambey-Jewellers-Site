@@ -1,0 +1,66 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="pGold" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="55%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#7A4F00"/>
+    </radialGradient>
+    <radialGradient id="pGem" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ffddaa"/>
+      <stop offset="40%" stop-color="#D4700A"/>
+      <stop offset="100%" stop-color="#7A3500"/>
+    </radialGradient>
+    <radialGradient id="pCenterGem" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ffd0e8"/>
+      <stop offset="40%" stop-color="#CC2277"/>
+      <stop offset="100%" stop-color="#7A0040"/>
+    </radialGradient>
+    <linearGradient id="bailG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE97A"/>
+      <stop offset="50%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#8B5E00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Bail (loop at top) -->
+  <path d="M90,20 Q90,8 100,8 Q110,8 110,20" fill="none" stroke="url(#bailG)" stroke-width="6" stroke-linecap="round"/>
+  <rect x="88" y="18" width="24" height="14" rx="5" fill="url(#pGold)" stroke="#8B5E00" stroke-width="1"/>
+
+  <!-- Main pendant body - ornate Mughal/Kundan style -->
+  <!-- Outer gold frame -->
+  <path d="M100,32 L125,50 L135,80 L130,115 Q115,145 100,155 Q85,145 70,115 L65,80 L75,50 Z" fill="url(#pGold)" stroke="#8B5E00" stroke-width="1.5"/>
+
+  <!-- Filigree border ring -->
+  <path d="M100,38 L120,54 L129,81 L124,112 Q112,138 100,148 Q88,138 76,112 L71,81 L80,54 Z" fill="none" stroke="#FFE97A" stroke-width="1" opacity="0.6"/>
+
+  <!-- Petal shapes around center -->
+  <ellipse cx="100" cy="62" rx="10" ry="14" fill="url(#pGem)" stroke="#8B5E00" stroke-width="0.8" transform="rotate(0,100,90)"/>
+  <ellipse cx="122" cy="80" rx="10" ry="14" fill="url(#pGem)" stroke="#8B5E00" stroke-width="0.8" transform="rotate(72,100,90)"/>
+  <ellipse cx="114" cy="107" rx="10" ry="14" fill="url(#pGem)" stroke="#8B5E00" stroke-width="0.8" transform="rotate(144,100,90)"/>
+  <ellipse cx="86" cy="107" rx="10" ry="14" fill="url(#pGem)" stroke="#8B5E00" stroke-width="0.8" transform="rotate(216,100,90)"/>
+  <ellipse cx="78" cy="80" rx="10" ry="14" fill="url(#pGem)" stroke="#8B5E00" stroke-width="0.8" transform="rotate(288,100,90)"/>
+
+  <!-- Center circular gem -->
+  <circle cx="100" cy="90" r="18" fill="url(#pCenterGem)" stroke="#8B5E00" stroke-width="1.2"/>
+  <circle cx="100" cy="90" r="12" fill="none" stroke="#FFB8DA" stroke-width="0.8" opacity="0.5"/>
+  <ellipse cx="94" cy="84" rx="6" ry="5" fill="white" opacity="0.2" transform="rotate(-25,94,84)"/>
+  <circle cx="93" cy="83" r="3" fill="white" opacity="0.35"/>
+
+  <!-- Small gold dots decoration -->
+  <circle cx="100" cy="45" r="3.5" fill="#FFE97A" stroke="#8B5E00" stroke-width="0.6"/>
+  <circle cx="126" cy="60" r="3.5" fill="#FFE97A" stroke="#8B5E00" stroke-width="0.6"/>
+  <circle cx="130" cy="90" r="3.5" fill="#FFE97A" stroke="#8B5E00" stroke-width="0.6"/>
+  <circle cx="74" cy="60" r="3.5" fill="#FFE97A" stroke="#8B5E00" stroke-width="0.6"/>
+  <circle cx="70" cy="90" r="3.5" fill="#FFE97A" stroke="#8B5E00" stroke-width="0.6"/>
+
+  <!-- Drop pearl at bottom -->
+  <line x1="100" y1="148" x2="100" y2="158" stroke="#C8860A" stroke-width="1.5"/>
+  <ellipse cx="100" cy="168" rx="8" ry="11" fill="#F5F0E8" stroke="#C8860A" stroke-width="1"/>
+  <ellipse cx="97" cy="164" rx="3" ry="4" fill="white" opacity="0.5"/>
+
+  <!-- Side drops -->
+  <line x1="74" y1="128" x2="70" y2="138" stroke="#C8860A" stroke-width="1.2"/>
+  <circle cx="70" cy="143" r="5" fill="#F5F0E8" stroke="#C8860A" stroke-width="1"/>
+  <line x1="126" y1="128" x2="130" y2="138" stroke="#C8860A" stroke-width="1.2"/>
+  <circle cx="130" cy="143" r="5" fill="#F5F0E8" stroke="#C8860A" stroke-width="1"/>
+</svg>

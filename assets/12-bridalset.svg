@@ -1,0 +1,106 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bsGold" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="50%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#7A4F00"/>
+    </radialGradient>
+    <radialGradient id="bsRuby" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#ffc0c0"/>
+      <stop offset="45%" stop-color="#CC1111"/>
+      <stop offset="100%" stop-color="#7A0000"/>
+    </radialGradient>
+    <radialGradient id="bsGreen" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#c0ffd8"/>
+      <stop offset="45%" stop-color="#1A9A50"/>
+      <stop offset="100%" stop-color="#0A5028"/>
+    </radialGradient>
+    <radialGradient id="bsPearl" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#EDE0CC"/>
+      <stop offset="100%" stop-color="#C8B090"/>
+    </radialGradient>
+  </defs>
+
+  <!-- === NECKLACE === -->
+  <!-- Left chain arc -->
+  <path d="M18,25 Q12,55 18,85 Q28,110 48,125" fill="none" stroke="#C8860A" stroke-width="2.5"/>
+  <!-- Right chain arc -->
+  <path d="M182,25 Q188,55 182,85 Q172,110 152,125" fill="none" stroke="#C8860A" stroke-width="2.5"/>
+
+  <!-- Chain gems left -->
+  <circle cx="16" cy="40" r="3.5" fill="url(#bsRuby)" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="14" cy="58" r="3.5" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="15" cy="76" r="3.5" fill="url(#bsRuby)" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="20" cy="93" r="3.5" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="30" cy="108" r="3.5" fill="url(#bsRuby)" stroke="#7A4F00" stroke-width="0.7"/>
+  <!-- Chain gems right -->
+  <circle cx="184" cy="40" r="3.5" fill="url(#bsRuby)" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="186" cy="58" r="3.5" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="185" cy="76" r="3.5" fill="url(#bsRuby)" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="180" cy="93" r="3.5" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="170" cy="108" r="3.5" fill="url(#bsRuby)" stroke="#7A4F00" stroke-width="0.7"/>
+
+  <!-- Necklace bottom arc -->
+  <path d="M48,125 Q75,140 100,142 Q125,140 152,125" fill="none" stroke="#C8860A" stroke-width="2.5"/>
+  <!-- Bottom arc gems -->
+  <circle cx="62" cy="133" r="4" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="80" cy="140" r="4" fill="url(#bsRuby)" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="100" cy="142" r="5" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="120" cy="140" r="4" fill="url(#bsRuby)" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="138" cy="133" r="4" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.8"/>
+
+  <!-- Central pendant of necklace -->
+  <line x1="100" y1="142" x2="100" y2="150" stroke="#C8860A" stroke-width="2"/>
+  <path d="M100,150 L84,163 Q84,182 100,182 Q116,182 116,163 Z" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="1"/>
+  <path d="M100,154 L88,165 Q88,180 100,180 Q112,180 112,165 Z" fill="url(#bsRuby)"/>
+  <ellipse cx="94" cy="160" rx="5" ry="4" fill="white" opacity="0.25" transform="rotate(-20,94,160)"/>
+  <circle cx="92" cy="159" r="2.5" fill="white" opacity="0.4"/>
+
+  <!-- Side drops from necklace -->
+  <line x1="48" y1="125" x2="44" y2="137" stroke="#C8860A" stroke-width="1.2"/>
+  <ellipse cx="44" cy="144" rx="6" ry="9" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.8"/>
+  <ellipse cx="44" cy="144" rx="3.5" ry="6" fill="url(#bsGreen)"/>
+
+  <line x1="152" y1="125" x2="156" y2="137" stroke="#C8860A" stroke-width="1.2"/>
+  <ellipse cx="156" cy="144" rx="6" ry="9" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.8"/>
+  <ellipse cx="156" cy="144" rx="3.5" ry="6" fill="url(#bsGreen)"/>
+
+  <!-- === EARRINGS === -->
+  <!-- Left earring -->
+  <circle cx="16" cy="22" r="5" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="16" cy="22" r="2.5" fill="url(#bsRuby)"/>
+  <!-- Right earring -->
+  <circle cx="184" cy="22" r="5" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="184" cy="22" r="2.5" fill="url(#bsRuby)"/>
+
+  <!-- === MAANG TIKKA === -->
+  <!-- Chain along parting -->
+  <path d="M65,12 Q100,5 135,12" fill="none" stroke="#C8860A" stroke-width="1.5"/>
+  <circle cx="65" cy="12" r="3" fill="#C8860A"/>
+  <circle cx="100" cy="5" r="3.5" fill="#C8860A"/>
+  <circle cx="135" cy="12" r="3" fill="#C8860A"/>
+  <!-- Drop to tikka -->
+  <line x1="100" y1="5" x2="100" y2="18" stroke="#C8860A" stroke-width="1.5"/>
+  <!-- Tikka disc -->
+  <circle cx="100" cy="26" r="10" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="1"/>
+  <circle cx="100" cy="26" r="6" fill="url(#bsRuby)"/>
+  <circle cx="97" cy="23" r="2" fill="white" opacity="0.4"/>
+
+  <!-- === RING === -->
+  <!-- Left hand ring -->
+  <ellipse cx="38" cy="175" rx="14" ry="6" fill="none" stroke="url(#bsGold)" stroke-width="4"/>
+  <rect x="32" y="163" width="12" height="10" rx="2" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.8"/>
+  <rect x="35" y="165" width="6" height="6" rx="1" fill="url(#bsRuby)"/>
+
+  <!-- Right hand ring -->
+  <ellipse cx="162" cy="175" rx="14" ry="6" fill="none" stroke="url(#bsGold)" stroke-width="4"/>
+  <rect x="156" y="163" width="12" height="10" rx="2" fill="url(#bsGold)" stroke="#7A4F00" stroke-width="0.8"/>
+  <rect x="159" y="165" width="6" height="6" rx="1" fill="url(#bsRuby)"/>
+
+  <!-- === BANGLES === -->
+  <ellipse cx="38" cy="155" rx="16" ry="7" fill="none" stroke="#C8860A" stroke-width="4"/>
+  <ellipse cx="38" cy="147" rx="16" ry="7" fill="none" stroke="#C8860A" stroke-width="3" opacity="0.7"/>
+  <ellipse cx="162" cy="155" rx="16" ry="7" fill="none" stroke="#C8860A" stroke-width="4"/>
+  <ellipse cx="162" cy="147" rx="16" ry="7" fill="none" stroke="#C8860A" stroke-width="3" opacity="0.7"/>
+</svg>

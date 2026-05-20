@@ -1,0 +1,58 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="b1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE97A"/>
+      <stop offset="30%" stop-color="#D4920A"/>
+      <stop offset="60%" stop-color="#A06800"/>
+      <stop offset="100%" stop-color="#FFE97A"/>
+    </linearGradient>
+    <linearGradient id="b2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0B0"/>
+      <stop offset="35%" stop-color="#C8860A"/>
+      <stop offset="65%" stop-color="#8B5E00"/>
+      <stop offset="100%" stop-color="#FFF0B0"/>
+    </linearGradient>
+    <linearGradient id="b3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD060"/>
+      <stop offset="40%" stop-color="#B87A00"/>
+      <stop offset="70%" stop-color="#7A4F00"/>
+      <stop offset="100%" stop-color="#FFD060"/>
+    </linearGradient>
+    <linearGradient id="b4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8D0"/>
+      <stop offset="30%" stop-color="#DFA00A"/>
+      <stop offset="60%" stop-color="#9A6A00"/>
+      <stop offset="100%" stop-color="#FFF8D0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 4 bangles stacked, slightly offset for 3D depth -->
+
+  <!-- Bangle 4 (back) -->
+  <ellipse cx="102" cy="108" rx="72" ry="28" fill="none" stroke="url(#b4)" stroke-width="11" opacity="0.75"/>
+  <ellipse cx="102" cy="108" rx="72" ry="28" fill="none" stroke="#FFF8D0" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Bangle 3 -->
+  <ellipse cx="100" cy="104" rx="72" ry="28" fill="none" stroke="url(#b3)" stroke-width="11" opacity="0.85"/>
+  <ellipse cx="100" cy="104" rx="72" ry="28" fill="none" stroke="#FFD060" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Bangle 2 -->
+  <ellipse cx="100" cy="98" rx="72" ry="28" fill="none" stroke="url(#b2)" stroke-width="11"/>
+  <ellipse cx="100" cy="98" rx="72" ry="28" fill="none" stroke="#FFF0B0" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Bangle 1 (front) -->
+  <ellipse cx="100" cy="92" rx="72" ry="28" fill="none" stroke="url(#b1)" stroke-width="12"/>
+  <ellipse cx="100" cy="92" rx="72" ry="28" fill="none" stroke="#FFE97A" stroke-width="2" opacity="0.55"/>
+
+  <!-- Decorative dots on front bangle -->
+  <circle cx="28" cy="92" r="4" fill="#FFF0A0" stroke="#8B5E00" stroke-width="0.8"/>
+  <circle cx="172" cy="92" r="4" fill="#FFF0A0" stroke="#8B5E00" stroke-width="0.8"/>
+  <circle cx="100" cy="64" r="4" fill="#FFF0A0" stroke="#8B5E00" stroke-width="0.8"/>
+  <circle cx="100" cy="120" r="4" fill="#FFF0A0" stroke="#8B5E00" stroke-width="0.8"/>
+
+  <!-- Small gem accents -->
+  <circle cx="64" cy="70" r="3.5" fill="#CC1111" stroke="#8B5E00" stroke-width="0.8"/>
+  <circle cx="136" cy="70" r="3.5" fill="#1A6B8A" stroke="#8B5E00" stroke-width="0.8"/>
+  <circle cx="64" cy="114" r="3.5" fill="#7B2D8B" stroke="#8B5E00" stroke-width="0.8"/>
+  <circle cx="136" cy="114" r="3.5" fill="#1A6B3A" stroke="#8B5E00" stroke-width="0.8"/>
+</svg>

@@ -1,0 +1,70 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="gemGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#f0c8ff"/>
+      <stop offset="40%" stop-color="#9B30D0"/>
+      <stop offset="100%" stop-color="#4a0080"/>
+    </radialGradient>
+    <radialGradient id="goldBand" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFE97A"/>
+      <stop offset="35%" stop-color="#D4920A"/>
+      <stop offset="70%" stop-color="#A06800"/>
+      <stop offset="100%" stop-color="#7A4F00"/>
+    </radialGradient>
+    <radialGradient id="goldSetting" cx="25%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="50%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#8B5E00"/>
+    </radialGradient>
+    <linearGradient id="bandSheen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7A4F00"/>
+      <stop offset="20%" stop-color="#C8860A"/>
+      <stop offset="45%" stop-color="#FFE97A"/>
+      <stop offset="70%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#7A4F00"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ring band - bottom ellipse (ring opening bottom) -->
+  <ellipse cx="100" cy="148" rx="38" ry="14" fill="url(#goldBand)" stroke="#7A4F00" stroke-width="1"/>
+
+  <!-- Ring band left side -->
+  <path d="M62,148 L62,105 Q62,95 68,90" fill="url(#bandSheen)" stroke="#7A4F00" stroke-width="1"/>
+  <!-- Ring band right side -->
+  <path d="M138,148 L138,105 Q138,95 132,90" fill="url(#bandSheen)" stroke="#7A4F00" stroke-width="1"/>
+
+  <!-- Band width fill -->
+  <rect x="62" y="95" width="76" height="53" fill="url(#bandSheen)"/>
+
+  <!-- Ring band - top ellipse (ring opening top) -->
+  <ellipse cx="100" cy="100" rx="38" ry="14" fill="url(#goldBand)" stroke="#7A4F00" stroke-width="1.2"/>
+  <!-- Inner shadow of band top -->
+  <ellipse cx="100" cy="100" rx="28" ry="9" fill="#5A3800" opacity="0.5"/>
+
+  <!-- Prong setting base -->
+  <path d="M76,95 Q100,80 124,95 L120,72 Q100,62 80,72 Z" fill="url(#goldSetting)" stroke="#8B5E00" stroke-width="1"/>
+
+  <!-- Gem stone - main faceted diamond/amethyst shape -->
+  <polygon points="100,55 118,68 118,88 100,96 82,88 82,68" fill="url(#gemGrad)" stroke="#6A0090" stroke-width="0.8"/>
+  <!-- Gem facet lines -->
+  <line x1="100" y1="55" x2="100" y2="96" stroke="#c080ff" stroke-width="0.5" opacity="0.6"/>
+  <line x1="82" y1="68" x2="118" y2="88" stroke="#c080ff" stroke-width="0.5" opacity="0.6"/>
+  <line x1="118" y1="68" x2="82" y2="88" stroke="#c080ff" stroke-width="0.5" opacity="0.6"/>
+  <polygon points="100,55 118,68 100,75 82,68" fill="#e0aaff" opacity="0.35"/>
+  <!-- Gem sparkle -->
+  <circle cx="91" cy="64" r="2.5" fill="white" opacity="0.7" filter="url(#glow)"/>
+  <circle cx="96" cy="60" r="1.2" fill="white" opacity="0.9"/>
+
+  <!-- Prong claws (4 prongs) -->
+  <rect x="78" y="60" width="5" height="16" rx="2.5" fill="url(#goldSetting)" stroke="#8B5E00" stroke-width="0.5"/>
+  <rect x="117" y="60" width="5" height="16" rx="2.5" fill="url(#goldSetting)" stroke="#8B5E00" stroke-width="0.5"/>
+  <rect x="78" y="80" width="5" height="16" rx="2.5" fill="url(#goldSetting)" stroke="#8B5E00" stroke-width="0.5"/>
+  <rect x="117" y="80" width="5" height="16" rx="2.5" fill="url(#goldSetting)" stroke="#8B5E00" stroke-width="0.5"/>
+
+  <!-- Band highlight -->
+  <ellipse cx="100" cy="148" rx="22" ry="5" fill="#FFE97A" opacity="0.3"/>
+</svg>

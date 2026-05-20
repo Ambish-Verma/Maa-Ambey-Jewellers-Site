@@ -1,0 +1,103 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="linkH" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="30%" stop-color="#D4920A"/>
+      <stop offset="65%" stop-color="#8B5E00"/>
+      <stop offset="100%" stop-color="#C8860A"/>
+    </linearGradient>
+    <linearGradient id="linkV" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="30%" stop-color="#D4920A"/>
+      <stop offset="65%" stop-color="#8B5E00"/>
+      <stop offset="100%" stop-color="#C8860A"/>
+    </linearGradient>
+    <linearGradient id="claspG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE97A"/>
+      <stop offset="50%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#7A4F00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Chain arranged in S-curve / draping across canvas -->
+  <!-- Using curb-style links: alternating flat & upright ovals -->
+
+  <!-- Row 1 going right -->
+  <!-- Horizontal links (flat, wider) -->
+  <ellipse cx="22" cy="60" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="22" cy="60" rx="8" ry="2.5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="46" cy="60" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="46" cy="60" rx="8" ry="2.5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="70" cy="60" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="70" cy="60" rx="8" ry="2.5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="94" cy="60" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="94" cy="60" rx="8" ry="2.5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="118" cy="60" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="118" cy="60" rx="8" ry="2.5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="142" cy="60" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="142" cy="60" rx="8" ry="2.5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="166" cy="60" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="166" cy="60" rx="8" ry="2.5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <!-- Vertical links between horizontal ones -->
+  <ellipse cx="34" cy="60" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="34" cy="60" rx="2" ry="5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="58" cy="60" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="58" cy="60" rx="2" ry="5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="82" cy="60" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="82" cy="60" rx="2" ry="5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="106" cy="60" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="106" cy="60" rx="2" ry="5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="130" cy="60" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="130" cy="60" rx="2" ry="5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <ellipse cx="154" cy="60" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="154" cy="60" rx="2" ry="5" fill="none" stroke="#FFE97A" stroke-width="0.6" opacity="0.5"/>
+
+  <!-- Row 2 going left (slightly lower) -->
+  <ellipse cx="178" cy="90" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="154" cy="90" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="130" cy="90" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="106" cy="90" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="82" cy="90" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="58" cy="90" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="34" cy="90" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+
+  <ellipse cx="166" cy="90" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="142" cy="90" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="118" cy="90" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="94" cy="90" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="70" cy="90" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="46" cy="90" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+
+  <!-- Row 3 going right (lowest) -->
+  <ellipse cx="22" cy="120" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="46" cy="120" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="70" cy="120" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="94" cy="120" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="118" cy="120" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="142" cy="120" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="166" cy="120" rx="12" ry="6" fill="url(#linkH)" stroke="#7A4F00" stroke-width="1.2"/>
+
+  <ellipse cx="34" cy="120" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="58" cy="120" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="82" cy="120" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="106" cy="120" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="130" cy="120" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+  <ellipse cx="154" cy="120" rx="5" ry="9" fill="url(#linkV)" stroke="#7A4F00" stroke-width="1.2"/>
+
+  <!-- Lobster clasp -->
+  <rect x="158" y="148" width="22" height="14" rx="6" fill="url(#claspG)" stroke="#7A4F00" stroke-width="1"/>
+  <rect x="162" y="152" width="14" height="6" rx="3" fill="#7A4F00" opacity="0.4"/>
+  <circle cx="176" cy="155" r="3.5" fill="url(#claspG)" stroke="#7A4F00" stroke-width="0.8"/>
+</svg>

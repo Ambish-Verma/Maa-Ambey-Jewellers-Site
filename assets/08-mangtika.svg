@@ -1,0 +1,87 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="tikkaDisc" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="55%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#7A4F00"/>
+    </radialGradient>
+    <radialGradient id="tikkaGem" cx="30%" cy="28%" r="68%">
+      <stop offset="0%" stop-color="#ffd0d0"/>
+      <stop offset="40%" stop-color="#CC1111"/>
+      <stop offset="100%" stop-color="#7A0000"/>
+    </radialGradient>
+    <radialGradient id="tikkaGem2" cx="30%" cy="28%" r="68%">
+      <stop offset="0%" stop-color="#d0d0ff"/>
+      <stop offset="40%" stop-color="#2222CC"/>
+      <stop offset="100%" stop-color="#00007A"/>
+    </radialGradient>
+    <linearGradient id="chainTG" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFE97A"/>
+      <stop offset="50%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#FFE97A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hair chain / maang chain - curves from center parting -->
+  <path d="M30,18 Q100,8 170,18" fill="none" stroke="#C8860A" stroke-width="2.5"/>
+  <path d="M30,18 Q100,8 170,18" fill="none" stroke="#FFE97A" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Chain beads on maang chain -->
+  <circle cx="30" cy="18" r="4" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="52" cy="13" r="3.5" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="75" cy="10" r="3.5" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="100" cy="8" r="4.5" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="125" cy="10" r="3.5" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="148" cy="13" r="3.5" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="170" cy="18" r="4" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+
+  <!-- Vertical drop chain from center -->
+  <line x1="100" y1="12" x2="100" y2="55" stroke="#C8860A" stroke-width="2"/>
+  <line x1="100" y1="12" x2="100" y2="55" stroke="#FFE97A" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Small beads on drop chain -->
+  <circle cx="100" cy="22" r="3" fill="#C8860A" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="100" cy="34" r="3" fill="#C8860A" stroke="#7A4F00" stroke-width="0.7"/>
+  <circle cx="100" cy="46" r="3" fill="#C8860A" stroke="#7A4F00" stroke-width="0.7"/>
+
+  <!-- Main tikka disc -->
+  <circle cx="100" cy="80" r="38" fill="url(#tikkaDisc)" stroke="#7A4F00" stroke-width="1.5"/>
+  <!-- Outer decorative ring -->
+  <circle cx="100" cy="80" r="34" fill="none" stroke="#FFE97A" stroke-width="1" opacity="0.5"/>
+
+  <!-- Petal/sun rays on disc -->
+  <ellipse cx="100" cy="48" rx="7" ry="10" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <ellipse cx="100" cy="48" rx="7" ry="10" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8" transform="rotate(45,100,80)"/>
+  <ellipse cx="100" cy="48" rx="7" ry="10" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8" transform="rotate(90,100,80)"/>
+  <ellipse cx="100" cy="48" rx="7" ry="10" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8" transform="rotate(135,100,80)"/>
+  <ellipse cx="100" cy="48" rx="7" ry="10" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8" transform="rotate(180,100,80)"/>
+  <ellipse cx="100" cy="48" rx="7" ry="10" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8" transform="rotate(225,100,80)"/>
+  <ellipse cx="100" cy="48" rx="7" ry="10" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8" transform="rotate(270,100,80)"/>
+  <ellipse cx="100" cy="48" rx="7" ry="10" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8" transform="rotate(315,100,80)"/>
+
+  <!-- Inner gem ring -->
+  <circle cx="100" cy="80" r="20" fill="url(#tikkaGem)" stroke="#7A4F00" stroke-width="1"/>
+
+  <!-- Gem facets -->
+  <circle cx="100" cy="80" r="14" fill="none" stroke="#FF8888" stroke-width="0.6" opacity="0.5"/>
+  <line x1="100" y1="60" x2="100" y2="100" stroke="#FF8888" stroke-width="0.5" opacity="0.4"/>
+  <line x1="80" y1="80" x2="120" y2="80" stroke="#FF8888" stroke-width="0.5" opacity="0.4"/>
+  <ellipse cx="93" cy="73" rx="5" ry="4" fill="white" opacity="0.25" transform="rotate(-30,93,73)"/>
+  <circle cx="91" cy="72" r="2.5" fill="white" opacity="0.45"/>
+
+  <!-- Center tiny gem -->
+  <circle cx="100" cy="80" r="7" fill="#FFD0D0" stroke="#CC1111" stroke-width="0.8"/>
+  <circle cx="97" cy="77" r="2.5" fill="white" opacity="0.5"/>
+
+  <!-- Bottom pendant drop -->
+  <line x1="100" y1="118" x2="100" y2="130" stroke="#C8860A" stroke-width="1.8"/>
+  <path d="M100,130 L88,148 Q88,168 100,168 Q112,168 112,148 Z" fill="url(#tikkaDisc)" stroke="#7A4F00" stroke-width="1"/>
+  <ellipse cx="100" cy="152" rx="7" ry="9" fill="url(#tikkaGem2)"/>
+  <circle cx="97" cy="148" r="2" fill="white" opacity="0.4"/>
+
+  <!-- Side small drops -->
+  <line x1="68" y1="108" x2="62" y2="120" stroke="#C8860A" stroke-width="1.2"/>
+  <circle cx="62" cy="126" r="5" fill="url(#tikkaGem)" stroke="#7A4F00" stroke-width="0.8"/>
+  <line x1="132" y1="108" x2="138" y2="120" stroke="#C8860A" stroke-width="1.2"/>
+  <circle cx="138" cy="126" r="5" fill="url(#tikkaGem)" stroke="#7A4F00" stroke-width="0.8"/>
+</svg>

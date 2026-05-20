@@ -1,0 +1,74 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="gemR" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ff9999"/>
+      <stop offset="45%" stop-color="#CC1111"/>
+      <stop offset="100%" stop-color="#6A0000"/>
+    </radialGradient>
+    <linearGradient id="chainG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE580"/>
+      <stop offset="50%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#8B5E00"/>
+    </linearGradient>
+    <radialGradient id="pendantG" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="60%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#7A4F00"/>
+    </radialGradient>
+    <filter id="gs"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- Chain curve - left side -->
+  <path d="M28,28 Q20,80 40,125 Q60,155 100,160" fill="none" stroke="#C8860A" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Chain highlight left -->
+  <path d="M28,28 Q20,80 40,125 Q60,155 100,160" fill="none" stroke="#FFE580" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Chain curve - right side -->
+  <path d="M172,28 Q180,80 160,125 Q140,155 100,160" fill="none" stroke="#C8860A" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Chain highlight right -->
+  <path d="M172,28 Q180,80 160,125 Q140,155 100,160" fill="none" stroke="#FFE580" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Chain links - left side (small oval links) -->
+  <g stroke="#8B5E00" stroke-width="0.8">
+    <ellipse cx="28" cy="28" rx="5" ry="3" transform="rotate(-30,28,28)" fill="url(#chainG)"/>
+    <ellipse cx="36" cy="45" rx="5" ry="3" transform="rotate(-40,36,45)" fill="url(#chainG)"/>
+    <ellipse cx="32" cy="63" rx="5" ry="3" transform="rotate(-45,32,63)" fill="url(#chainG)"/>
+    <ellipse cx="30" cy="82" rx="5" ry="3" transform="rotate(-50,30,82)" fill="url(#chainG)"/>
+    <ellipse cx="32" cy="100" rx="5" ry="3" transform="rotate(-55,32,100)" fill="url(#chainG)"/>
+    <ellipse cx="38" cy="117" rx="5" ry="3" transform="rotate(-60,38,117)" fill="url(#chainG)"/>
+    <ellipse cx="50" cy="133" rx="5" ry="3" transform="rotate(-70,50,133)" fill="url(#chainG)"/>
+    <ellipse cx="65" cy="147" rx="5" ry="3" transform="rotate(-80,65,147)" fill="url(#chainG)"/>
+    <ellipse cx="82" cy="156" rx="5" ry="3" transform="rotate(-85,82,156)" fill="url(#chainG)"/>
+  </g>
+
+  <!-- Chain links - right side -->
+  <g stroke="#8B5E00" stroke-width="0.8">
+    <ellipse cx="172" cy="28" rx="5" ry="3" transform="rotate(30,172,28)" fill="url(#chainG)"/>
+    <ellipse cx="164" cy="45" rx="5" ry="3" transform="rotate(40,164,45)" fill="url(#chainG)"/>
+    <ellipse cx="168" cy="63" rx="5" ry="3" transform="rotate(45,168,63)" fill="url(#chainG)"/>
+    <ellipse cx="170" cy="82" rx="5" ry="3" transform="rotate(50,170,82)" fill="url(#chainG)"/>
+    <ellipse cx="168" cy="100" rx="5" ry="3" transform="rotate(55,168,100)" fill="url(#chainG)"/>
+    <ellipse cx="162" cy="117" rx="5" ry="3" transform="rotate(60,162,117)" fill="url(#chainG)"/>
+    <ellipse cx="150" cy="133" rx="5" ry="3" transform="rotate(70,150,133)" fill="url(#chainG)"/>
+    <ellipse cx="135" cy="147" rx="5" ry="3" transform="rotate(80,135,147)" fill="url(#chainG)"/>
+    <ellipse cx="118" cy="156" rx="5" ry="3" transform="rotate(85,118,156)" fill="url(#chainG)"/>
+  </g>
+
+  <!-- Pendant bail -->
+  <rect x="94" y="154" width="12" height="10" rx="4" fill="url(#pendantG)" stroke="#8B5E00" stroke-width="0.8"/>
+
+  <!-- Pendant teardrop body -->
+  <path d="M100,164 L84,178 Q84,196 100,196 Q116,196 116,178 Z" fill="url(#pendantG)" stroke="#8B5E00" stroke-width="1"/>
+  <!-- Gem in pendant -->
+  <path d="M100,168 L88,179 Q88,193 100,193 Q112,193 112,179 Z" fill="url(#gemR)"/>
+  <!-- Facet lines on gem -->
+  <line x1="100" y1="168" x2="100" y2="193" stroke="#ff6666" stroke-width="0.5" opacity="0.5"/>
+  <line x1="88" y1="180" x2="112" y2="180" stroke="#ff9999" stroke-width="0.5" opacity="0.5"/>
+  <!-- Gem highlight -->
+  <ellipse cx="93" cy="173" rx="4" ry="3" fill="white" opacity="0.3" transform="rotate(-20,93,173)"/>
+  <circle cx="91" cy="172" r="1.5" fill="white" opacity="0.6" filter="url(#gs)"/>
+
+  <!-- Clasp top -->
+  <rect x="24" y="22" width="8" height="12" rx="3" fill="url(#pendantG)" stroke="#8B5E00" stroke-width="0.8"/>
+  <rect x="168" y="22" width="8" height="12" rx="3" fill="url(#pendantG)" stroke="#8B5E00" stroke-width="0.8"/>
+</svg>

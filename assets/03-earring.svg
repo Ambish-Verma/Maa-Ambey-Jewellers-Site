@@ -1,0 +1,77 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="jhumkaG" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="50%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#7A4F00"/>
+    </radialGradient>
+    <radialGradient id="jhumkaG2" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="50%" stop-color="#D4920A"/>
+      <stop offset="100%" stop-color="#8B5E00"/>
+    </radialGradient>
+    <radialGradient id="gemE" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#aaffcc"/>
+      <stop offset="50%" stop-color="#1A9A50"/>
+      <stop offset="100%" stop-color="#0A5A28"/>
+    </radialGradient>
+  </defs>
+
+  <!-- LEFT EARRING -->
+  <!-- Hook/wire -->
+  <path d="M52,15 Q52,8 58,6 Q66,4 68,12 Q70,18 65,24" fill="none" stroke="#C8860A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Top disc / ear stud cap -->
+  <ellipse cx="59" cy="28" rx="10" ry="5" fill="url(#jhumkaG2)" stroke="#8B5E00" stroke-width="0.8"/>
+  <!-- Chain drops from disc -->
+  <line x1="52" y1="31" x2="48" y2="55" stroke="#C8860A" stroke-width="1.2"/>
+  <line x1="59" y1="33" x2="59" y2="57" stroke="#C8860A" stroke-width="1.2"/>
+  <line x1="66" y1="31" x2="70" y2="55" stroke="#C8860A" stroke-width="1.2"/>
+  <!-- Small beads on drops -->
+  <circle cx="50" cy="43" r="2.2" fill="#C8860A" stroke="#8B5E00" stroke-width="0.5"/>
+  <circle cx="59" cy="45" r="2.2" fill="#C8860A" stroke="#8B5E00" stroke-width="0.5"/>
+  <circle cx="68" cy="43" r="2.2" fill="#C8860A" stroke="#8B5E00" stroke-width="0.5"/>
+  <!-- Jhumka bell dome -->
+  <path d="M45,60 Q40,75 42,90 Q50,108 59,112 Q68,108 76,90 Q78,75 73,60 Z" fill="url(#jhumkaG)" stroke="#8B5E00" stroke-width="1"/>
+  <!-- Dome engraved ring lines -->
+  <ellipse cx="59" cy="80" rx="17" ry="5" fill="none" stroke="#8B5E00" stroke-width="0.7" opacity="0.6"/>
+  <ellipse cx="59" cy="92" rx="14" ry="4" fill="none" stroke="#8B5E00" stroke-width="0.7" opacity="0.6"/>
+  <!-- Gem on dome front -->
+  <ellipse cx="59" cy="72" rx="7" ry="8" fill="url(#gemE)" stroke="#0A5A28" stroke-width="0.8"/>
+  <ellipse cx="56" cy="69" rx="2.5" ry="3" fill="white" opacity="0.35"/>
+  <!-- Fringe drops at bottom -->
+  <line x1="50" y1="110" x2="48" y2="122" stroke="#C8860A" stroke-width="1"/>
+  <line x1="55" y1="113" x2="54" y2="125" stroke="#C8860A" stroke-width="1"/>
+  <line x1="59" y1="114" x2="59" y2="126" stroke="#C8860A" stroke-width="1"/>
+  <line x1="63" y1="113" x2="64" y2="125" stroke="#C8860A" stroke-width="1"/>
+  <line x1="68" y1="110" x2="70" y2="122" stroke="#C8860A" stroke-width="1"/>
+  <circle cx="48" cy="124" r="2" fill="#C8860A"/>
+  <circle cx="54" cy="127" r="2" fill="#C8860A"/>
+  <circle cx="59" cy="128" r="2" fill="#C8860A"/>
+  <circle cx="64" cy="127" r="2" fill="#C8860A"/>
+  <circle cx="70" cy="124" r="2" fill="#C8860A"/>
+
+  <!-- RIGHT EARRING -->
+  <path d="M148,15 Q148,8 142,6 Q134,4 132,12 Q130,18 135,24" fill="none" stroke="#C8860A" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="141" cy="28" rx="10" ry="5" fill="url(#jhumkaG2)" stroke="#8B5E00" stroke-width="0.8"/>
+  <line x1="148" y1="31" x2="152" y2="55" stroke="#C8860A" stroke-width="1.2"/>
+  <line x1="141" y1="33" x2="141" y2="57" stroke="#C8860A" stroke-width="1.2"/>
+  <line x1="134" y1="31" x2="130" y2="55" stroke="#C8860A" stroke-width="1.2"/>
+  <circle cx="150" cy="43" r="2.2" fill="#C8860A" stroke="#8B5E00" stroke-width="0.5"/>
+  <circle cx="141" cy="45" r="2.2" fill="#C8860A" stroke="#8B5E00" stroke-width="0.5"/>
+  <circle cx="132" cy="43" r="2.2" fill="#C8860A" stroke="#8B5E00" stroke-width="0.5"/>
+  <path d="M127,60 Q122,75 124,90 Q132,108 141,112 Q150,108 158,90 Q160,75 155,60 Z" fill="url(#jhumkaG)" stroke="#8B5E00" stroke-width="1"/>
+  <ellipse cx="141" cy="80" rx="17" ry="5" fill="none" stroke="#8B5E00" stroke-width="0.7" opacity="0.6"/>
+  <ellipse cx="141" cy="92" rx="14" ry="4" fill="none" stroke="#8B5E00" stroke-width="0.7" opacity="0.6"/>
+  <ellipse cx="141" cy="72" rx="7" ry="8" fill="url(#gemE)" stroke="#0A5A28" stroke-width="0.8"/>
+  <ellipse cx="138" cy="69" rx="2.5" ry="3" fill="white" opacity="0.35"/>
+  <line x1="132" y1="110" x2="130" y2="122" stroke="#C8860A" stroke-width="1"/>
+  <line x1="137" y1="113" x2="136" y2="125" stroke="#C8860A" stroke-width="1"/>
+  <line x1="141" y1="114" x2="141" y2="126" stroke="#C8860A" stroke-width="1"/>
+  <line x1="145" y1="113" x2="146" y2="125" stroke="#C8860A" stroke-width="1"/>
+  <line x1="150" y1="110" x2="152" y2="122" stroke="#C8860A" stroke-width="1"/>
+  <circle cx="130" cy="124" r="2" fill="#C8860A"/>
+  <circle cx="136" cy="127" r="2" fill="#C8860A"/>
+  <circle cx="141" cy="128" r="2" fill="#C8860A"/>
+  <circle cx="146" cy="127" r="2" fill="#C8860A"/>
+  <circle cx="152" cy="124" r="2" fill="#C8860A"/>
+</svg>

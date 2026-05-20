@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maa Ambey Jewellers</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D5A3;
+      --gold-dark: #8B6914;
+      --gold-pale: #FAF5E8;
+      --ink: #1A1208;
+      --ink-mid: #3D2E10;
+      --cream: #FDFAF3;
+      --stone: #6B5C3E;
+      --border: rgba(201, 168, 76, 0.25);
+      --border-strong: rgba(201, 168, 76, 0.5);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(253, 250, 243, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 90px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 70px;
+      width: auto;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-brand-main {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--gold-dark);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-brand-sub {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      color: var(--stone);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--ink-mid);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 100%;
+      height: 1px;
+      background: var(--gold);
+      transition: right 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-dark);
+    }
+
+    .nav-links a:hover::after {
+      right: 0;
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--ink) !important;
+      padding: 8px 20px !important;
+      border-radius: 2px;
+      letter-spacing: 0.1em !important;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-dark) !important;
+      color: #fff !important;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 2rem 4rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/hero_background.svg') center/cover;
+    }
+
+    .hero-ornament {
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--gold));
+      opacity: 0.4;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 780px;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 300;
+      line-height: 0.95;
+      color: var(--ink);
+      margin-bottom: 0.4em;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+
+    .hero-sub {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 300;
+      color: var(--stone);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      padding: 14px 32px;
+      border-radius: 2px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1.5px solid var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+      color: #fff;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--ink-mid);
+      padding: 14px 32px;
+      border-radius: 2px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1.5px solid var(--border-strong);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold-pale);
+      border-color: var(--gold);
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--ink);
+      padding: 1.5rem 2rem;
+    }
+
+    .trust-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .trust-icon {
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    .trust-text {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+    }
+
+    /* SECTION SHARED */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--stone);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    /* CATEGORIES */
+    #categories {
+      background: #fff;
+    }
+
+    .cat-header {
+      max-width: 1200px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .cat-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cat-card {
+      background: #fff;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .cat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 100%;
+      height: 4px;
+      background: var(--gold);
+      transition: right 0.3s ease;
+    }
+
+    .cat-card:hover {
+      background: var(--gold-pale);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(201, 168, 76, 0.15);
+      border-color: var(--gold);
+    }
+
+    .cat-card:hover::after {
+      right: 0;
+    }
+
+    .cat-emoji {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1rem;
+      display: block;
+      object-fit: contain;
+    }
+
+    .cat-name {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .cat-sub {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--stone);
+      text-transform: uppercase;
+    }
+
+    /* HOW IT WORKS */
+    #how-it-works {
+      background: var(--gold-pale);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .how-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .how-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step:last-child {
+      border-bottom: none;
+    }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 44px;
+      opacity: 0.6;
+    }
+
+    .step-title {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--stone);
+      line-height: 1.7;
+    }
+
+    /* ORDER FORM */
+    #order {
+      background: var(--cream);
+    }
+
+    .order-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .form-wrap {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+    }
+
+    .form-title {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .form-sub {
+      font-size: 12px;
+      color: var(--stone);
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--stone);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border-strong);
+      background: var(--cream);
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+      border-radius: 1px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: #fff;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .upload-area {
+      border: 1.5px dashed var(--border-strong);
+      background: var(--gold-pale);
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-radius: 1px;
+    }
+
+    .upload-area:hover {
+      border-color: var(--gold);
+      background: #fff;
+    }
+
+    .upload-icon {
+      font-size: 24px;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+    }
+
+    .upload-text {
+      font-size: 12px;
+      color: var(--stone);
+      letter-spacing: 0.05em;
+    }
+
+    .upload-small {
+      font-size: 10px;
+      color: var(--stone);
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 2px;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 1.25rem;
+      text-decoration: none;
+    }
+
+    .whatsapp-btn:hover {
+      background: #128C7E;
+    }
+
+    .wa-icon {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+
+    /* GALLERY */
+    #gallery {
+      background: #fff;
+    }
+
+    .gallery-header {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+
+    .gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5px;
+      background: var(--border);
+      border: 1.5px solid var(--border);
+    }
+
+    .gal-item {
+      background: #f7f3ec;
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gal-item:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+      aspect-ratio: unset;
+    }
+
+    .gal-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gal-item:hover .gal-img {
+      transform: scale(1.04);
+    }
+
+    .gal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 18, 8, 0);
+      transition: background 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.5rem;
+    }
+
+    .gal-item:hover .gal-overlay {
+      background: rgba(26, 18, 8, 0.45);
+    }
+
+    .gal-label {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 400;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all 0.3s;
+    }
+
+    .gal-item:hover .gal-label {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gal-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 140px;
+    }
+
+    .gal-placeholder-icon {
+      font-size: 2rem;
+      opacity: 0.3;
+    }
+
+    .gal-placeholder-text {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--stone);
+      opacity: 0.5;
+      text-transform: uppercase;
+    }
+
+    /* ABOUT */
+    #about {
+      background: var(--ink);
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about-section-label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .about-section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .about-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .about-text {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 2rem;
+    }
+
+    .addr-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 2rem;
+    }
+
+    .addr-title {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--gold-light);
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    .addr-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .addr-icon {
+      color: var(--gold);
+      font-size: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .addr-info {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .addr-info strong {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .addr-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 2px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    .addr-wa:hover {
+      background: #128C7E;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0D0A04;
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+    }
+
+    .footer-text {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .footer-gold {
+      color: var(--gold);
+    }
+
+    /* WHATSAPP FLOAT */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+      z-index: 200;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+    }
+
+    .wa-float svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+
+    /* DIVIDER */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .divider-diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding: 0 1.25rem;
+        height: 75px;
+      }
+      .nav-logo img {
+        height: 50px;
+      }
+      .nav-brand-main {
+        font-size: 18px;
+      }
+      .nav-brand-sub {
+        font-size: 7px;
+      }
+      .nav-links li:not(:last-child) {
+        display: none;
+      }
+      .nav-links {
+        gap: 0;
+      }
+      
+      section {
+        padding: 4.5rem 1.25rem;
+      }
+
+      .hero {
+        padding: 120px 1.25rem 4rem;
+      }
+      
+      .hero-title {
+        font-size: 42px;
+      }
+      
+      .hero-sub {
+        font-size: 16px;
+      }
+      
+      .hero-actions {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .btn-primary, .btn-outline {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .trust-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .how-inner,
+      .order-inner,
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gal-item:nth-child(1) {
+        grid-column: span 2;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      
+      .cat-card {
+        padding: 1.5rem 1rem;
+      }
+      
+      .how-inner, .about-inner {
+        gap: 2.5rem;
+      }
+      
+      .addr-card {
+        padding: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .trust-inner {
+        grid-template-columns: 1fr;
+      }
+      
+      .cat-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .wa-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 48px;
+        height: 48px;
+      }
+      
+      .wa-float svg {
+        width: 24px;
+        height: 24px;
+      }
+      
+      .hero-title {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/icon.webp" alt="Maa Ambey Jewellers Logo">
+        <div class="nav-brand">
+          <span class="nav-brand-main">Maa Ambey Jewellers</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#categories">Collections</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#order" class="nav-cta">Order Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Your Design, Our Craft</div>
+      <h1 class="hero-title">Crafted for<br><em>every occasion</em></h1>
+      <p class="hero-sub">Send us your reference image. We'll handcraft it in gold or silver exactly as you envision.
+      </p>
+      <div class="hero-actions">
+        <a href="#order" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Place Custom Order
+        </a>
+        <a href="#gallery" class="btn-outline">View Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">BIS Hallmarked Gold</span></div>
+      <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Custom Design from
+          Reference</span></div>
+      <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">Gold &amp; Silver
+          Specialists</span></div>
+      <div class="trust-item"><span class="trust-icon">✦</span><span class="trust-text">WhatsApp Order &amp;
+          Enquiry</span></div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section id="categories">
+    <div class="cat-header">
+      <div class="section-label">Our Collections</div>
+      <h2 class="section-title">Every piece, <em>made to order</em></h2>
+      <p class="section-desc">From traditional temple jewellery to modern minimalist designs in 18K, 22K gold and pure
+        925 silver.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card"><img src="assets/01-ring.svg" alt="Rings" class="cat-emoji">
+        <div class="cat-name">Rings</div>
+        <div class="cat-sub">Gold &amp; Silver</div>
+      </div>
+      <div class="cat-card"><img src="assets/02-necklace.svg" alt="Necklaces" class="cat-emoji">
+        <div class="cat-name">Necklaces</div>
+        <div class="cat-sub">Sets &amp; Singles</div>
+      </div>
+      <div class="cat-card"><img src="assets/03-earring.svg" alt="Earrings" class="cat-emoji">
+        <div class="cat-name">Earrings</div>
+        <div class="cat-sub">Studs, Drops &amp; Jhumkas</div>
+      </div>
+      <div class="cat-card"><img src="assets/04-bangles.svg" alt="Bangles" class="cat-emoji">
+        <div class="cat-name">Bangles</div>
+        <div class="cat-sub">Plain &amp; Designed</div>
+      </div>
+      <div class="cat-card"><img src="assets/05-chain.svg" alt="Chains" class="cat-emoji">
+        <div class="cat-name">Chains</div>
+        <div class="cat-sub">All Styles &amp; Weights</div>
+      </div>
+      <div class="cat-card"><img src="assets/06-pendant.svg" alt="Pendants" class="cat-emoji">
+        <div class="cat-name">Pendants</div>
+        <div class="cat-sub">Gold &amp; Silver</div>
+      </div>
+      <div class="cat-card"><img src="assets/07-kada.svg" alt="Kadas & Bracelets" class="cat-emoji">
+        <div class="cat-name">Kadas &amp; Bracelets</div>
+        <div class="cat-sub">Traditional &amp; Modern</div>
+      </div>
+      <div class="cat-card"><img src="assets/08-mangtika.svg" alt="Maang Tikka" class="cat-emoji">
+        <div class="cat-name">Maang Tikka</div>
+        <div class="cat-sub">Bridal &amp; Festive</div>
+      </div>
+      <div class="cat-card"><img src="assets/09-nosepin.svg" alt="Nose Pins" class="cat-emoji">
+        <div class="cat-name">Nose Pins</div>
+        <div class="cat-sub">Nath &amp; Studs</div>
+      </div>
+      <div class="cat-card"><img src="assets/10-anklet.svg" alt="Anklets" class="cat-emoji">
+        <div class="cat-name">Anklets</div>
+        <div class="cat-sub">Silver Payal</div>
+      </div>
+      <div class="cat-card"><img src="assets/11-mangalsutra.svg" alt="Mangalsutra" class="cat-emoji">
+        <div class="cat-name">Mangalsutra</div>
+        <div class="cat-sub">Traditional Designs</div>
+      </div>
+      <div class="cat-card"><img src="assets/12-bridalset.svg" alt="Bridal Sets" class="cat-emoji">
+        <div class="cat-name">Bridal Sets</div>
+        <div class="cat-sub">Complete Collections</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="gallery-header">
+      <div class="section-label">Our Craftsmanship</div>
+      <h2 class="section-title">The <em>artisan's</em> hand</h2>
+      <p class="section-desc">Every piece is handcrafted with precision. Upload your reference image and we'll bring it
+        to life.</p>
+    </div>
+    <div class="gallery-grid">
+      <!-- Replace gal-placeholder divs with <img class="gal-img" src="your-photo.jpg" alt="..."> -->
+      <div class="gal-item">
+        <div class="gal-placeholder">
+          <div class="gal-placeholder-icon">💍</div>
+          <div class="gal-placeholder-text">Add your photo here</div>
+        </div>
+        <div class="gal-overlay"><span class="gal-label">Signature Collection</span></div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder">
+          <div class="gal-placeholder-icon">📿</div>
+          <div class="gal-placeholder-text">Add your photo here</div>
+        </div>
+        <div class="gal-overlay"><span class="gal-label">Gold Necklace</span></div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder">
+          <div class="gal-placeholder-icon">✨</div>
+          <div class="gal-placeholder-text">Add your photo here</div>
+        </div>
+        <div class="gal-overlay"><span class="gal-label">Jhumkas</span></div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder">
+          <div class="gal-placeholder-icon">⌚</div>
+          <div class="gal-placeholder-text">Add your photo here</div>
+        </div>
+        <div class="gal-overlay"><span class="gal-label">Gold Bangle</span></div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder">
+          <div class="gal-placeholder-icon">🔗</div>
+          <div class="gal-placeholder-text">Add your photo here</div>
+        </div>
+        <div class="gal-overlay"><span class="gal-label">Gold Chain</span></div>
+      </div>
+      <div class="gal-item">
+        <div class="gal-placeholder">
+          <div class="gal-placeholder-icon">🌸</div>
+          <div class="gal-placeholder-text">Add your photo here</div>
+        </div>
+        <div class="gal-overlay"><span class="gal-label">Silver Pendant</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <div class="how-inner">
+      <div>
+        <div class="section-label">Simple Process</div>
+        <h2 class="section-title">How to <em>order</em></h2>
+        <p class="section-desc">From reference image to finished jewellery all via WhatsApp. No complicated forms
+          needed.</p>
+        <div style="margin-top: 2.5rem;">
+          <a href="https://wa.me/919163395374?text=Hello%20Maa%20Ambey%20Jewellers%2C%20I%20want%20to%20place%20a%20custom%20jewellery%20order."
+            class="btn-primary" target="_blank" rel="noopener">
+            <svg class="wa-icon" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+            Start on WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="how-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <div class="step-title">Send your reference</div>
+            <div class="step-desc">Share a photo or image of the jewellery design you want from Instagram, Pinterest,
+              or anywhere. WhatsApp us directly.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <div class="step-title">Get a quote</div>
+            <div class="step-desc">Our artisan will assess your design and provide a price estimate based on weight,
+              metal type (gold/silver), and complexity.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <div class="step-title">Confirm &amp; we begin</div>
+            <div class="step-desc">Once you approve the quote, we start crafting. We'll share progress updates via
+              WhatsApp throughout the making.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <div class="step-title">Pickup or delivery</div>
+            <div class="step-desc">Collect from our Liluah store or arrange for safe delivery. Your bespoke piece
+              exactly as imagined.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section id="order">
+    <div class="order-inner">
+      <div>
+        <div class="section-label">Custom Orders</div>
+        <h2 class="section-title">Place your <em>order</em></h2>
+        <p class="section-desc">Fill the quick form and we'll send your enquiry directly to our WhatsApp. No waiting
+          instant connection with our craftsmen.</p>
+        <div class="divider">
+          <div class="divider-diamond"></div>
+        </div>
+        <div style="margin-top: 1rem;">
+          <div style="font-size: 12px; letter-spacing: 0.05em; color: var(--stone); line-height: 2;">
+            <div>📍 26/4, New 53 Sailen Dhar Road</div>
+            <div style="padding-left: 1.4rem;">Patuapara, Liluah, Howrah – 711204</div>
+            <div style="margin-top: 0.5rem;">📱 +91 91633 95374</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-wrap">
+        <div class="form-title">Enquiry &amp; Order Form</div>
+        <div class="form-sub">All messages are sent via WhatsApp for fastest response</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" id="f-name" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="f-phone" placeholder="+91 98765 43210">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category *</label>
+            <select id="f-cat">
+              <option value="">Select category</option>
+              <option>Ring</option>
+              <option>Necklace</option>
+              <option>Earrings</option>
+              <option>Bangle</option>
+              <option>Chain</option>
+              <option>Pendant</option>
+              <option>Kada / Bracelet</option>
+              <option>Maang Tikka</option>
+              <option>Nose Pin</option>
+              <option>Anklet</option>
+              <option>Mangalsutra</option>
+              <option>Bridal Set</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Metal Type</label>
+            <select id="f-metal">
+              <option value="">Select metal</option>
+              <option>22K Gold</option>
+              <option>18K Gold</option>
+              <option>14K Gold</option>
+              <option>925 Silver</option>
+              <option>Not Sure</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Approximate Budget (₹)</label>
+          <input type="text" id="f-budget" placeholder="e.g. ₹15,000 – ₹25,000">
+        </div>
+        <div class="form-group">
+          <label>Description / Special Requirements</label>
+          <textarea id="f-desc"
+            placeholder="Describe the design, size, occasion, or any customisation you need..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Reference Image</label>
+          <div class="upload-area" onclick="document.getElementById('f-file').click()">
+            <div class="upload-icon">📎</div>
+            <div class="upload-text">Tap to attach reference image</div>
+            <div class="upload-small">JPG, PNG, HEIC · Max 10MB</div>
+            <input type="file" id="f-file" accept="image/*" style="display:none" onchange="handleFile(this)">
+            <div id="file-name" style="margin-top:6px;font-size:11px;color:#C9A84C;display:none;"></div>
+          </div>
+        </div>
+        <a id="whatsapp-send" href="#" class="whatsapp-btn" onclick="sendWhatsApp(event)">
+          <svg class="wa-icon" viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          Send Enquiry via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-inner">
+      <div>
+        <div class="about-section-label">Our Story</div>
+        <h2 class="about-title">A legacy of <em>fine craft</em></h2>
+        <p class="about-text">Maa Ambey Jewellers has been serving families in Howrah for generations. Every ornament
+          that leaves our workshop carries the blessing of Maa Ambey and the dedication of skilled craftsmen who treat
+          your gold like a sacred trust.</p>
+        <p class="about-text">We specialize in custom-made jewellery you bring the vision, we bring the craft. From
+          bridal sets to everyday elegance, in gold and silver, plain and stone-set.</p>
+        <div style="display:flex;gap:2rem;margin-top:2rem;">
+          <div>
+            <div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--gold);">22K</div>
+            <div
+              style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;">
+              Pure Gold</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,0.1);"></div>
+          <div>
+            <div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--gold);">925</div>
+            <div
+              style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;">
+              Sterling Silver</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,0.1);"></div>
+          <div>
+            <div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--gold);">BIS</div>
+            <div
+              style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;">
+              Hallmarked</div>
+          </div>
+        </div>
+      </div>
+      <div class="addr-card">
+        <div class="addr-title">Visit Our Store</div>
+        <div class="addr-item">
+          <span class="addr-icon">📍</span>
+          <div class="addr-info">
+            <strong>Maa Ambey Jewellers</strong>
+            26/4, New 53 Sailen Dhar Road,<br>
+            Patuapara, Liluah,<br>
+            Howrah – 711204, West Bengal
+          </div>
+        </div>
+        <div class="addr-item">
+          <span class="addr-icon">📱</span>
+          <div class="addr-info">
+            <strong>WhatsApp &amp; Calls</strong>
+            +91 91633 95374
+          </div>
+        </div>
+        <div class="addr-item">
+          <span class="addr-icon">🕐</span>
+          <div class="addr-info">
+            <strong>Shop Hours</strong>
+            Mon – Sat: 10:00 AM – 8:00 PM<br>
+            Sunday: 11:00 AM – 5:00 PM
+          </div>
+        </div>
+        <a href="https://wa.me/919163395374?text=Hello%20Maa%20Ambey%20Jewellers%2C%20I%20want%20to%20enquire%20about%20custom%20jewellery."
+          class="addr-wa" target="_blank" rel="noopener">
+          <svg style="width:16px;height:16px;fill:#fff;flex-shrink:0;" viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-text">© 2026 <span class="footer-gold">Maa Ambey Jewellers</span> · Liluah, Howrah · Crafted with
+      devotion</p>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a class="wa-float"
+    href="https://wa.me/919163395374?text=Hello%20Maa%20Ambey%20Jewellers%2C%20I%20want%20to%20enquire%20about%20custom%20jewellery."
+    target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+    </svg>
+  </a>
+
+  <script>
+    function handleFile(input) {
+      const name = input.files[0]?.name;
+      if (name) {
+        const el = document.getElementById('file-name');
+        el.textContent = '📎 ' + name;
+        el.style.display = 'block';
+      }
+    }
+
+    function sendWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('f-name').value.trim();
+      const phone = document.getElementById('f-phone').value.trim();
+      const cat = document.getElementById('f-cat').value;
+      const metal = document.getElementById('f-metal').value;
+      const budget = document.getElementById('f-budget').value.trim();
+      const desc = document.getElementById('f-desc').value.trim();
+
+      if (!name || !phone) {
+        alert('Please enter your name and phone number.');
+        return;
+      }
+
+      let msg = `🙏 *New Order Enquiry – Maa Ambey Jewellers*\n\n`;
+      msg += `👤 *Name:* ${name}\n`;
+      msg += `📱 *Phone:* ${phone}\n`;
+      if (cat) msg += `💎 *Category:* ${cat}\n`;
+      if (metal) msg += `🥇 *Metal:* ${metal}\n`;
+      if (budget) msg += `💰 *Budget:* ${budget}\n`;
+      if (desc) msg += `📝 *Details:* ${desc}\n`;
+      msg += `\n_Sent from maaambeyjewellers.com_`;
+
+      const url = `https://wa.me/919163395374?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+
+</html>

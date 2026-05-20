@@ -1,0 +1,76 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nathRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="25%" stop-color="#D4920A"/>
+      <stop offset="55%" stop-color="#8B5E00"/>
+      <stop offset="80%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#FFF0A0"/>
+    </linearGradient>
+    <radialGradient id="pearl" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F5F0E8"/>
+      <stop offset="100%" stop-color="#D4C8B0"/>
+    </radialGradient>
+    <radialGradient id="rubyN" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFaaaa"/>
+      <stop offset="45%" stop-color="#CC1111"/>
+      <stop offset="100%" stop-color="#7A0000"/>
+    </radialGradient>
+    <radialGradient id="goldGem" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFF0A0"/>
+      <stop offset="50%" stop-color="#C8860A"/>
+      <stop offset="100%" stop-color="#7A4F00"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Large gold nose ring (nath) - open circle -->
+  <path d="M100,100 m-60,0 a60,60 0 1,1 120,0" fill="none" stroke="url(#nathRing)" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Ring highlight -->
+  <path d="M100,100 m-60,0 a60,60 0 1,1 120,0" fill="none" stroke="#FFF0A0" stroke-width="2" opacity="0.45" stroke-linecap="round"/>
+
+  <!-- Opening ends of ring (nose pin part) -->
+  <circle cx="40" cy="100" r="5.5" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="160" cy="100" r="5.5" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+
+  <!-- Decorative gold beads studded on ring (top half) -->
+  <circle cx="100" cy="40" r="5" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="100" cy="40" r="2.5" fill="#FFE97A"/>
+
+  <circle cx="62" cy="51" r="4" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="138" cy="51" r="4" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+
+  <!-- Ruby gem studs on ring -->
+  <circle cx="47" cy="68" r="5" fill="url(#goldGem)" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="47" cy="68" r="3" fill="url(#rubyN)"/>
+
+  <circle cx="153" cy="68" r="5" fill="url(#goldGem)" stroke="#7A4F00" stroke-width="0.8"/>
+  <circle cx="153" cy="68" r="3" fill="url(#rubyN)"/>
+
+  <!-- Center large pearl hanging from bottom of ring -->
+  <line x1="100" y1="160" x2="100" y2="172" stroke="#C8860A" stroke-width="1.8"/>
+  <!-- Pearl cap -->
+  <path d="M92,162 Q100,158 108,162 L106,168 Q100,166 94,168 Z" fill="url(#goldGem)" stroke="#7A4F00" stroke-width="0.7"/>
+  <!-- Pearl -->
+  <ellipse cx="100" cy="180" rx="14" ry="16" fill="url(#pearl)" stroke="#C8A060" stroke-width="1"/>
+  <ellipse cx="95" cy="173" rx="5" ry="4" fill="white" opacity="0.5" transform="rotate(-20,95,173)"/>
+
+  <!-- Small dangling gems on ring bottom -->
+  <line x1="75" y1="148" x2="72" y2="158" stroke="#C8860A" stroke-width="1.2"/>
+  <circle cx="72" cy="164" r="5" fill="url(#rubyN)" stroke="#7A4F00" stroke-width="0.8"/>
+
+  <line x1="125" y1="148" x2="128" y2="158" stroke="#C8860A" stroke-width="1.2"/>
+  <circle cx="128" cy="164" r="5" fill="url(#rubyN)" stroke="#7A4F00" stroke-width="0.8"/>
+
+  <!-- Side chain going to ear (traditional nath chain) -->
+  <path d="M40,100 Q20,85 15,60 Q12,40 20,25" fill="none" stroke="#C8860A" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- Chain beads -->
+  <circle cx="38" cy="90" r="2.5" fill="#C8860A"/>
+  <circle cx="28" cy="78" r="2.5" fill="#C8860A"/>
+  <circle cx="20" cy="62" r="2.5" fill="#C8860A"/>
+  <circle cx="16" cy="45" r="2.5" fill="#C8860A"/>
+  <!-- Ear hook -->
+  <path d="M20,25 Q22,15 28,12 Q35,10 38,18" fill="none" stroke="#C8860A" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="38" cy="18" r="4" fill="#C8860A" stroke="#7A4F00" stroke-width="0.8"/>
+</svg>
