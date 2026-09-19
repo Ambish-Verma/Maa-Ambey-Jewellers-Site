@@ -15,7 +15,7 @@ export default function Navbar({ menuOpen, toggleMenu }) {
           </div>
         </a>
         <ul className="nav-links">
-          <li><a href="#categories">Design</a></li>
+          <li><a href="#categories">Get Design Idea</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#about">About</a></li>

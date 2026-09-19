@@ -7,14 +7,14 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
-  display: "swap",
+  display: "optional",
   variable: "--serif",
 });
 
 const jost = Jost({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
-  display: "swap",
+  display: "optional",
   variable: "--sans",
 });
 

@@ -4,7 +4,7 @@ export default function MobileMenu({ menuOpen, closeMenu }) {
   return (
     <div className={`mobile-menu${menuOpen ? ' active' : ''}`} id="mobile-menu">
       <div className="mobile-menu-inner">
-        <a href="#categories" className="mobile-link" onClick={closeMenu}>Design</a>
+        <a href="#categories" className="mobile-link" onClick={closeMenu}>Get Design Idea</a>
         <a href="#gallery" className="mobile-link" onClick={closeMenu}>Gallery</a>
         <a href="#how-it-works" className="mobile-link" onClick={closeMenu}>How It Works</a>
         <a href="#about" className="mobile-link" onClick={closeMenu}>About</a>

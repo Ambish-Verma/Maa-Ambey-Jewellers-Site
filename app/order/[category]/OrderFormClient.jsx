@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import Navbar from '../../components/Navbar'
 import MobileMenu from '../../components/MobileMenu'
@@ -22,13 +22,15 @@ const metalOptions = [
 const occasionOptions = [
   'Wedding (Shaadi)', 'Engagement / Ring Ceremony', 'Bridal (Dulhan)',
   'Birthday', 'Anniversary', 'Valentine\'s Day', 'Karva Chauth',
-  'Diwali', 'Dussehra', 'Navratri / Garba', 'Eid', 'Christmas', 'Pongal', 'Onam', 'Baisakhi', 'Raksha Bandhan', 'Karwa Chauth',
+  'Diwali', 'Dussehra', 'Navratri / Garba', 'Eid', 'Christmas', 'Pongal', 'Onam', 'Baisakhi', 'Raksha Bandhan',
   'Muhurat / Griha Pravesh', 'Baby Shower / Godh Bharai',
   'Graduation', 'Retirement', 'House Warming',
   'Daily Wear', 'Office / Work Wear',
   'Gift for Someone', 'Self Purchase',
   'Religious / Puja', 'Temple Visit',
   'Party / Cocktail / Reception',
+  'Lohri', 'Makar Sankranti', 'Holi', 'Bihu', 'Chhath Puja',
+  'Akshaya Tritiya', 'Karva Chauth', 'Teej', 'Kojagiri',
   'Other'
 ]
 
@@ -105,13 +107,84 @@ const occasionForOptions = [
   'Friend', 'Colleague',
   'Myself (Self)', 'Couple / Pair Set',
   'Child / Kids',
+  'Gift for Someone',
+  'Relative / Family Member',
   'Other'
 ]
 
+const categoryOccasionForMap = {
+  ring: [
+    'Bride', 'Groom', 'Myself (Self)', 'Couple / Pair Set',
+    'Daughter', 'Son', 'Niece', 'Nephew',
+    'Friend', 'Colleague', 'Sister of Bride/Groom', 'Brother of Bride/Groom',
+    'Grandmother', 'Grandfather', 'Mother of Bride', 'Mother of Groom',
+    'Father of Bride', 'Father of Groom', 'Child / Kids', 'Other',
+  ],
+  necklace: [
+    'Bride', 'Myself (Self)', 'Mother of Bride', 'Mother of Groom',
+    'Grandmother', 'Daughter', 'Sister of Bride/Groom',
+    'Friend', 'Niece', 'Colleague',
+    'Bridesmaid', 'Groom', 'Child / Kids', 'Other',
+  ],
+  earring: [
+    'Bride', 'Myself (Self)', 'Daughter', 'Niece',
+    'Friend', 'Grandmother', 'Mother of Bride', 'Mother of Groom',
+    'Sister of Bride/Groom', 'Bridesmaid', 'Colleague',
+    'Child / Kids', 'Other',
+  ],
+  bangle: [
+    'Bride', 'Myself (Self)', 'Mother of Bride', 'Mother of Groom',
+    'Grandmother', 'Daughter', 'Sister of Bride/Groom',
+    'Friend', 'Niece', 'Bridesmaid', 'Colleague',
+    'Child / Kids', 'Other',
+  ],
+  chain: [
+    'Groom', 'Myself (Self)', 'Son', 'Brother of Bride/Groom',
+    'Father of Bride', 'Father of Groom', 'Grandfather',
+    'Friend', 'Colleague', 'Nephew', 'Bride', 'Other',
+  ],
+  pendant: [
+    'Bride', 'Myself (Self)', 'Daughter', 'Son',
+    'Friend', 'Niece', 'Nephew', 'Grandmother',
+    'Mother of Bride', 'Mother of Groom', 'Sister of Bride/Groom',
+    'Child / Kids', 'Other',
+  ],
+  kada: [
+    'Groom', 'Myself (Self)', 'Brother of Bride/Groom',
+    'Father of Bride', 'Father of Groom', 'Grandfather',
+    'Son', 'Friend', 'Colleague', 'Nephew',
+    'Bride', 'Other',
+  ],
+  'maang-tikka': [
+    'Bride', 'Bridesmaid', 'Myself (Self)',
+    'Daughter', 'Sister of Bride/Groom', 'Friend', 'Other',
+  ],
+  'nose-pin': [
+    'Bride', 'Myself (Self)', 'Daughter', 'Mother of Bride',
+    'Mother of Groom', 'Grandmother', 'Sister of Bride/Groom',
+    'Friend', 'Niece', 'Bridesmaid', 'Other',
+  ],
+  anklet: [
+    'Bride', 'Myself (Self)', 'Daughter', 'Niece',
+    'Friend', 'Sister of Bride/Groom', 'Bridesmaid',
+    'Grandmother', 'Child / Kids', 'Other',
+  ],
+  mangalsutra: [
+    'Bride', 'Myself (Self)', 'Gift for Someone', 'Other',
+  ],
+  'bridal-set': [
+    'Bride', 'Groom', 'Bridesmaid', 'Groomsmen',
+    'Mother of Bride', 'Mother of Groom',
+    'Father of Bride', 'Father of Groom',
+    'Sister of Bride/Groom', 'Brother of Bride/Groom',
+    'Grandmother', 'Grandfather', 'Other',
+  ],
+}
+
 const deadlineOptions = [
   'Urgent — within 2–3 days', 'Quick — within 1 week',
-  '1–2 Weeks', '2–4 Weeks',
-  '1–2 Months', '2–3 Months',
+  '1–2 Weeks', '2–3 Weeks', '3–4 Weeks',
+  '1–2 Months', '2–3 Months', '3–6 Months',
   'Before a specific date (mention below)',
   'No Rush (whenever ready)'
 ]
@@ -543,11 +616,24 @@ export default function OrderFormClient({ category }) {
   const [stone, setStone] = useState('')
   const [weight, setWeight] = useState('')
   const [deadline, setDeadline] = useState('')
-  const [stoneColour, setStoneColour] = useState('')
   const [motif, setMotif] = useState('')
   const [extraValues, setExtraValues] = useState({})
   const [refImages, setRefImages] = useState([])
   const fileInputRef = useRef(null)
+
+  const filteredOccasionForOptions = useMemo(() => {
+    const mapKey = category
+    if (categoryOccasionForMap[mapKey]) {
+      return categoryOccasionForMap[mapKey]
+    }
+    return occasionForOptions
+  }, [category])
+
+  useEffect(() => {
+    if (occasionFor && !filteredOccasionForOptions.includes(occasionFor)) {
+      setOccasionFor('')
+    }
+  }, [filteredOccasionForOptions, occasionFor])
 
   useEffect(() => {
     return () => refImages.forEach(img => URL.revokeObjectURL(img.preview))
@@ -620,7 +706,6 @@ export default function OrderFormClient({ category }) {
     let prompt = `Create a detailed, photorealistic jewellery design for a ${config.title}.`
     if (metal) prompt += ` Metal: ${metal}.`
     if (stone && stone !== 'No Stones (Plain Gold/Silver)') prompt += ` Stones: ${stone}.`
-    if (stoneColour && stoneColour !== 'No Stones — Plain Metal') prompt += ` Stone colour: ${stoneColour}.`
     if (finish) prompt += ` Surface finish: ${finish}.`
     if (motif && motif !== 'No Specific Motif') prompt += ` Design motif/pattern: ${motif}.`
     const extras = Object.entries(extraValues).filter(([, v]) => v)
@@ -685,11 +770,7 @@ export default function OrderFormClient({ category }) {
                 <SearchableSelect label="Stones / Gemstones" value={stone} onChange={setStone} options={stoneOptions} placeholder="Select stone" />
               </div>
               <div className="form-row">
-                <SearchableSelect label="Stone Colour" value={stoneColour} onChange={setStoneColour} options={stoneColourOptions} placeholder="Select colour" />
                 <SearchableSelect label="Surface Finish" value={finish} onChange={setFinish} options={finishOptions} placeholder="Select finish" />
-              </div>
-              <div className="form-row">
-                <SearchableSelect label="Weight Preference" value={weight} onChange={setWeight} options={weightOptions} placeholder="Select weight" />
                 <SearchableSelect label="Design Motif / Pattern" value={motif} onChange={setMotif} options={motifOptions} placeholder="Select motif" />
               </div>
             </div>
@@ -748,7 +829,7 @@ export default function OrderFormClient({ category }) {
               </div>
               <div className="form-row">
                 <SearchableSelect label="Occasion / Purpose" value={occasion} onChange={setOccasion} options={occasionOptions} placeholder="Select occasion" />
-                <SearchableSelect label="Who is it for?" value={occasionFor} onChange={setOccasionFor} options={occasionForOptions} placeholder="Select" />
+                <SearchableSelect label="Who is it for?" value={occasionFor} onChange={setOccasionFor} options={filteredOccasionForOptions} placeholder="Select" />
               </div>
               <div className="form-row">
                 <SearchableSelect label="Design Style" value={designStyle} onChange={setDesignStyle} options={designStyleOptions} placeholder="Select style" />
