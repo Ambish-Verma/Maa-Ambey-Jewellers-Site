@@ -148,7 +148,7 @@ export default function OrderForm() {
     if (budget) msg += `*Budget:* ₹${Number(budget).toLocaleString('en-IN')}\n`
     if (desc.trim()) msg += `*Details:* ${desc.trim()}\n`
     if (imageUrl) msg += `\n*Reference Image:*\n${imageUrl}\n`
-    msg += `\n_Sent from maaambeyjewellers.com_`
+    msg += `\n_Sent from maaambeyjewellers.live_`
 
     const url = `https://wa.me/916291510356?text=${encodeURIComponent(msg)}`
     window.open(url, '_blank', 'noopener,noreferrer')

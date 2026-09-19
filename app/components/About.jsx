@@ -43,8 +43,10 @@ export default function About() {
             <span className="addr-icon">🕐</span>
             <div className="addr-info">
               <strong>Shop Hours</strong>
-              Tuesday – Sunday: 10:00 AM – 1:00 PM,<br />
-              6:00 PM – 9:00 PM
+              Tuesday – Sunday:<br />
+              10:00 AM – 1:00 PM<br />
+              6:00 PM – 9:00 PM<br />
+              <span style={{ opacity: 0.6 }}>(Closed on Monday)</span>
             </div>
           </div>
           <div className="addr-item">

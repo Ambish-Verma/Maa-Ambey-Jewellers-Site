@@ -19,6 +19,7 @@ const jost = Jost({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://www.maaambeyjewellers.live"),
   title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery – Howrah",
   description:
     "Handcrafted custom gold & silver jewellery from Liluah, Howrah. Send your reference image via WhatsApp and we'll bring it to life. BIS Hallmarked. 22K Gold & 925 Silver.",
@@ -35,6 +36,12 @@ export const metadata = {
     "bridal jewellery",
     "Maa Ambey Jewellers",
   ],
+  alternates: {
+    canonical: "https://www.maaambeyjewellers.live",
+  },
+  verification: {
+    google: "64edfb09c1a7bb12",
+  },
   openGraph: {
     title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery",
     description:
@@ -42,12 +49,14 @@ export const metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Maa Ambey Jewellers",
+    url: "https://www.maaambeyjewellers.live",
     images: [
       {
-        url: "/assets/icon.webp",
-        width: 512,
-        height: 512,
-        alt: "Maa Ambey Jewellers",
+        url: "/assets/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Maa Ambey Jewellers — Custom Gold & Silver Jewellery in Howrah",
+        type: "image/webp",
       },
     ],
   },
@@ -55,8 +64,8 @@ export const metadata = {
     card: "summary_large_image",
     title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery",
     description:
-      "Your design, our craft. AI-generated custom jewellery designs handcrafted in 22K gold & 925 silver.",
-    images: ["/assets/icon.webp"],
+      "Your design, our craft. Send a reference image and we'll handcraft it in 22K gold & 925 silver.",
+    images: ["/assets/og-image.webp"],
   },
   robots: {
     index: true,
