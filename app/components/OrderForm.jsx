@@ -150,8 +150,8 @@ export default function OrderForm() {
     if (imageUrl) msg += `\n*Reference Image:*\n${imageUrl}\n`
     msg += `\n_Sent from maaambeyjewellers.com_`
 
-    const url = `https://wa.me/919163395374?text=${encodeURIComponent(msg)}`
-    window.open(url, '_blank')
+    const url = `https://wa.me/916291510356?text=${encodeURIComponent(msg)}`
+    window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   const errorStyle = {
@@ -175,9 +175,8 @@ export default function OrderForm() {
           </div>
           <div style={{ marginTop: '1rem' }}>
             <div style={{ fontSize: '12px', letterSpacing: '0.05em', color: 'var(--stone)', lineHeight: 2 }}>
-              <div>📍 26/4, New 53 Sailen Dhar Road</div>
-              <div style={{ paddingLeft: '1.4rem' }}>Patuapara, Liluah, Howrah – 711204</div>
-              <div style={{ marginTop: '0.5rem' }}>📱 +91 91633 95374</div>
+              <div>📍 26/4, New 53 Sailen Dhar Road, Patuapara, Liluah, Howrah – 711204</div>
+              <div style={{ marginTop: '0.5rem' }}>📱 +91 62915 10356</div>
             </div>
           </div>
         </div>

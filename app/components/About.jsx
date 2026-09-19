@@ -8,7 +8,7 @@ export default function About() {
           <div className="about-section-label">Our Story</div>
           <h2 className="about-title">A legacy of <em>fine craft</em></h2>
           <p className="about-text">
-            Maa Ambey Jewellers has been serving families in Howrah for generations. Every ornament that leaves our workshop carries the blessing of Maa Ambey and the dedication of skilled craftsmen who treat your gold like a sacred trust.
+            Maa Ambey Jewellers is based in Liluah, Howrah, creating gold and silver jewellery with care, honest guidance, and skilled craftsmanship. Every piece is handled with respect, from your first design idea to the final finish.
           </p>
           <p className="about-text">
             We specialize in custom-made jewellery — you bring the vision, we bring the craft. From bridal sets to everyday elegance, in gold and silver, plain and stone-set.
@@ -33,31 +33,30 @@ export default function About() {
         <div className="addr-card">
           <div className="addr-title">Visit Our Store</div>
           <div className="addr-item">
-            <span className="addr-icon">📍</span>
-            <div className="addr-info">
-              <strong>Maa Ambey Jewellers</strong>
-              26/4, New 53 Sailen Dhar Road,<br />
-              Patuapara, Liluah,<br />
-              Howrah – 711204, West Bengal
-            </div>
-          </div>
-          <div className="addr-item">
             <span className="addr-icon">📱</span>
             <div className="addr-info">
               <strong>WhatsApp &amp; Calls</strong>
-              +91 91633 95374
+              +91 62915 10356
             </div>
           </div>
           <div className="addr-item">
             <span className="addr-icon">🕐</span>
             <div className="addr-info">
               <strong>Shop Hours</strong>
-              Mon – Sat: 10:00 AM – 8:00 PM<br />
-              Sunday: 11:00 AM – 5:00 PM
+              Tuesday – Sunday: 10:00 AM – 1:00 PM,<br />
+              6:00 PM – 9:00 PM
+            </div>
+          </div>
+          <div className="addr-item">
+            <span className="addr-icon">📍</span>
+            <div className="addr-info">
+              <strong>Address</strong>
+              26/4, New 53 Sailen Dhar Road, Patuapara,<br />
+              Liluah, Howrah – 711204, West Bengal
             </div>
           </div>
           <a
-            href="https://wa.me/919163395374?text=Hello%20Maa%20Ambey%20Jewellers%2C%20I%20want%20to%20enquire%20about%20custom%20jewellery."
+            href="https://wa.me/916291510356?text=Hello%20Maa%20Ambey%20Jewellers%2C%20I%20want%20to%20enquire%20about%20custom%20jewellery."
             className="addr-wa"
             target="_blank"
             rel="noopener noreferrer"

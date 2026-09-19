@@ -1,4 +1,22 @@
 import "./globals.css";
+import { Cormorant_Garamond, Jost } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--serif",
+});
+
+const jost = Jost({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+  variable: "--sans",
+});
 
 export const metadata = {
   title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery – Howrah",
@@ -24,6 +42,21 @@ export const metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Maa Ambey Jewellers",
+    images: [
+      {
+        url: "/assets/icon.webp",
+        width: 512,
+        height: 512,
+        alt: "Maa Ambey Jewellers",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery",
+    description:
+      "Your design, our craft. AI-generated custom jewellery designs handcrafted in 22K gold & 925 silver.",
+    images: ["/assets/icon.webp"],
   },
   robots: {
     index: true,
@@ -33,14 +66,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>{children}</body>
+    <html lang="en-IN" className={`${cormorant.variable} ${jost.variable}`}>
+      <body suppressHydrationWarning>{children}<SpeedInsights /><Analytics /></body>
     </html>
   );
 }
