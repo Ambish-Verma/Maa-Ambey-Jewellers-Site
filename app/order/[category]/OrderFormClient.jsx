@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import Navbar from '../../components/Navbar'
 import MobileMenu from '../../components/MobileMenu'
 import Footer from '../../components/Footer'
@@ -605,6 +605,7 @@ const categoryConfig = {
 
 export default function OrderFormClient({ category }) {
   const config = categoryConfig[category]
+  const router = useRouter()
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [metal, setMetal] = useState('')
@@ -648,7 +649,7 @@ export default function OrderFormClient({ category }) {
         <MobileMenu menuOpen={menuOpen} closeMenu={() => setMenuOpen(false)} />
         <section style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '1rem' }}>
           <h2 style={{ fontFamily: 'var(--serif)', fontSize: '32px', color: 'var(--ink)' }}>Category not found</h2>
-          <Link href="/#categories" className="btn-primary" style={{ textDecoration: 'none' }}>Back to Design</Link>
+          <a href="/" onClick={(e) => { e.preventDefault(); router.push('/') }} className="btn-primary" style={{ textDecoration: 'none', cursor: 'pointer' }}>Back to Design</a>
         </section>
         <Footer />
       </>
@@ -742,18 +743,19 @@ export default function OrderFormClient({ category }) {
         <div style={{ maxWidth: '780px', margin: '0 auto', padding: '0 2rem' }}>
           <span className="section-label">Custom Order</span>
           <div className="order-header" style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', marginBottom: '0.5rem', position: 'relative' }}>
-            <Link href="/#categories" className="order-back-btn" style={{
+            <a href="/" onClick={(e) => { e.preventDefault(); router.push('/') }} className="order-back-btn" style={{
               position: 'absolute', left: '-120px',
               display: 'inline-flex', alignItems: 'center', gap: '6px', flexShrink: 0,
               fontSize: '14px', color: 'var(--gold)', textDecoration: 'none',
               fontWeight: 500, transition: 'opacity 0.2s',
               padding: '1px 3px 3px 0px', margin: '12px 0px 11px 0px',
+              cursor: 'pointer',
             }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
               Back
-            </Link>
+            </a>
             <h1 className="section-title" style={{ fontSize: 'clamp(36px, 5vw, 56px)', marginBottom: 0 }}>
               Design your <em>{config.title.toLowerCase()}</em>
             </h1>
