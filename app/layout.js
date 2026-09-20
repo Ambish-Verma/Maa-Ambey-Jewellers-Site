@@ -2,6 +2,7 @@ import "./globals.css";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import ScrollToTop from "./components/ScrollToTop";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -104,9 +105,7 @@ export default function RootLayout({ children }) {
         <link rel="preload" href="/assets/icon.webp" as="image" type="image/webp" />
         <link rel="icon" href="/assets/icon.webp" type="image/webp" />
       </head>
-      <body suppressHydrationWarning>{children}<SpeedInsights /><Analytics />
-        <script dangerouslySetInnerHTML={{ __html: "window.addEventListener('load', function() { window.scrollTo(0, 0); });" }} />
-      </body>
+      <body suppressHydrationWarning><ScrollToTop />{children}<SpeedInsights /><Analytics /></body>
     </html>
   );
 }
