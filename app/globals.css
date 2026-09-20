@@ -173,7 +173,7 @@ nav {
 
 .hero-split-image {
   position: relative;
-  background: url('/assets/custom-jewellery-hero-photo-1.png') center/cover no-repeat;
+  background: url('/assets/hero-photo.webp') center/cover no-repeat;
   background-color: var(--ink-mid);
   display: flex;
   align-items: flex-start;
