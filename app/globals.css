@@ -1684,6 +1684,3 @@ footer {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-.hide-mobile { display: inline; }
-.show-inline-mobile { display: none; }
