@@ -43,7 +43,7 @@ export const metadata = {
     google: "64edfb09c1a7bb12",
   },
   openGraph: {
-    title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery",
+    title: "Maa Ambey Jewellers | Liluah – Howrah",
     description:
       "Your design, our craft. Send a reference image and we'll handcraft it in gold or silver.",
     type: "website",
@@ -62,7 +62,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery",
+    title: "Maa Ambey Jewellers | Liluah – Howrah",
     description:
       "Your design, our craft. Send a reference image and we'll handcraft it in 22K gold & 925 silver.",
     images: ["/assets/og-image.jpg"],
