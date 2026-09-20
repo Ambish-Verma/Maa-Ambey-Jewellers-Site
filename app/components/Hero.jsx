@@ -1,4 +1,22 @@
+'use client'
+
+import { useRouter, usePathname } from 'next/navigation'
+
+function smoothScroll(e, href, pathname, router) {
+  e.preventDefault()
+  const hash = href.includes('#') ? href.split('#')[1] : null
+  if (pathname === '/' && hash) {
+    const el = document.getElementById(hash)
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  } else {
+    router.push(href)
+  }
+}
+
 export default function Hero() {
+  const router = useRouter()
+  const pathname = usePathname()
+
   return (
     <section className="hero-split">
       <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>
@@ -42,13 +60,13 @@ export default function Hero() {
           </p>
 
           <div className="hero-split-actions">
-            <a href="/#order" className="btn-primary hero-split-btn">
+            <a href="/#order" className="btn-primary hero-split-btn" onClick={(e) => smoothScroll(e, '/#order', pathname, router)}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
               </svg>
               Start Your Design
             </a>
-            <a href="/#gallery" className="btn-outline hero-split-btn">View Our Craft</a>
+            <a href="/#gallery" className="btn-outline hero-split-btn" onClick={(e) => smoothScroll(e, '/#gallery', pathname, router)}>View Our Craft</a>
           </div>
 
           {/* Steps */}
