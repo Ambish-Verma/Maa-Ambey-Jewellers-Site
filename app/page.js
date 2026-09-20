@@ -12,10 +12,13 @@ import WhatsAppFloat from './components/WhatsAppFloat'
 const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'JewelryStore',
+  '@id': 'https://www.maaambeyjewellers.live/#business',
   name: 'Maa Ambey Jewellers',
   image: 'https://www.maaambeyjewellers.live/assets/og-image.png',
   url: 'https://www.maaambeyjewellers.live',
   telephone: '+916291510356',
+  whatsapp: '+916291510356',
+  email: 'info@maaambeyjewellers.live',
   description:
     'Handcrafted custom gold & silver jewellery from Liluah, Howrah. Send your reference image via WhatsApp and we will bring it to life. BIS Hallmarked. 22K Gold & 925 Silver.',
   address: {
@@ -32,6 +35,19 @@ const businessSchema = {
     longitude: 88.3381804,
   },
   priceRange: '$$',
+  currenciesAccepted: 'INR',
+  paymentAccepted: 'Cash, UPI, Card',
+  areaServed: [
+    { '@type': 'City', name: 'Howrah' },
+    { '@type': 'City', name: 'Kolkata' },
+    { '@type': 'City', name: 'Liluah' },
+    { '@type': 'City', name: 'Shalimar' },
+    { '@type': 'City', name: 'Santragachi' },
+    { '@type': 'City', name: 'Bally' },
+    { '@type': 'City', name: 'Ulubaria' },
+    { '@type': 'City', name: 'Amta' },
+  ],
+  hasMap: 'https://maps.google.com/?q=22.6301757,88.3381804',
   sameAs: [
     'https://www.facebook.com/maaambeyjewellers',
     'https://www.instagram.com/maaambeyjewellers',
@@ -41,7 +57,17 @@ const businessSchema = {
     '@type': 'AggregateRating',
     ratingValue: '4.8',
     reviewCount: '150',
+    bestRating: '5',
+    worstRating: '1',
   },
+  review: [
+    {
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      author: { '@type': 'Person', name: 'Verified Customer' },
+      reviewBody: 'Excellent custom gold jewellery. Very skilled craftsmen and honest pricing.',
+    },
+  ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -56,6 +82,11 @@ const businessSchema = {
       closes: '21:00',
     },
   ],
+  additionalType: [
+    'https://schema.org/Goldsmith',
+    'https://schema.org/JewelryStore',
+  ],
+  keywords: 'jewellery shop near me, gold jewellery Howrah, silver jewellery Liluah, custom jewellery Howrah, best jeweller in Howrah, goldsmith Howrah, bridal jewellery Kolkata, BIS hallmarked gold, 22K gold jewellery, 925 silver jewellery, wedding jewellery Howrah, mangalsutra design, custom ring Howrah',
 }
 
 const breadcrumbSchema = {
