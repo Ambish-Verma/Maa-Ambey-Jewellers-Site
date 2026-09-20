@@ -34,7 +34,7 @@ export default function Hero() {
           </p>
 
           <p className="hero-split-desc">
-            Bring your idea, a sketch, or a reference photo. We&rsquo;ll craft it in 22K gold or 925 silver.
+            Bring your idea, a sketch, or a reference photo. <span className="hide-mobile">We&rsquo;ll craft it in 22K gold or 925 silver.</span>
           </p>
 
           <div className="hero-split-actions">

@@ -20,10 +20,10 @@ export default function Categories() {
   return (
     <section id="categories">
       <div className="cat-header">
-        <div className="section-label">Choose a Category</div>
+        <div className="section-label">Get Design Idea</div>
         <h2 className="section-title">Design it yourself, <em>we'll craft it</em></h2>
         <p className="section-desc">
-          Choose a category, describe your vision, and let our AI generate a custom design — handcrafted in 22K gold & 925 silver.
+          Choose a category, <span className="show-inline-mobile">describe your vision.</span><span className="hide-mobile">describe your vision, and let our AI generate a custom design — handcrafted in 22K gold &amp; 925 silver.</span>
         </p>
       </div>
       <div className="cat-grid">
