@@ -1,22 +1,22 @@
 const BASE = 'https://www.maaambeyjewellers.live'
 
 const categories = [
-  'ring',
-  'necklace',
-  'earring',
-  'bangle',
-  'chain',
-  'pendant',
-  'kada',
-  'maang-tikka',
-  'nose-pin',
-  'anklet',
-  'mangalsutra',
-  'bridal-set',
+  { slug: 'ring', title: 'Ring' },
+  { slug: 'necklace', title: 'Necklace' },
+  { slug: 'earring', title: 'Earrings' },
+  { slug: 'bangle', title: 'Bangle' },
+  { slug: 'chain', title: 'Chain' },
+  { slug: 'pendant', title: 'Pendant' },
+  { slug: 'kada', title: 'Kada / Bracelet' },
+  { slug: 'maang-tikka', title: 'Maang Tikka' },
+  { slug: 'nose-pin', title: 'Nose Pin' },
+  { slug: 'anklet', title: 'Anklet' },
+  { slug: 'mangalsutra', title: 'Mangalsutra' },
+  { slug: 'bridal-set', title: 'Bridal Set' },
 ]
 
 export default function sitemap() {
-  const now = new Date()
+  const now = new Date().toISOString().split('T')[0]
 
   return [
     {
@@ -25,8 +25,8 @@ export default function sitemap() {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    ...categories.map((category) => ({
-      url: `${BASE}/order/${category}`,
+    ...categories.map((cat) => ({
+      url: `${BASE}/order/${cat.slug}`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,

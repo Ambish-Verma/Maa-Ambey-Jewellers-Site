@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+﻿# Maa Ambey Jewellers - Custom Gold & Silver Jewellery Website
+
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react)
+![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)
+
+A modern, SEO-optimized website for **Maa Ambey Jewellers** - a custom gold and silver jewellery shop in Liluah, Howrah, West Bengal.
+
+## Live Site
+
+[maaambeyjewellers.live](https://www.maaambeyjewellers.live)
+
+## Features
+
+- Homepage with hero, category grid, gallery, how-it-works, order form, about
+- 12 Jewellery Categories - Rings, Necklaces, Earrings, Bangles, Chains, Pendants, Kadas, Maang Tikka, Nose Pins, Anklets, Mangalsutras, Bridal Sets
+- AI Design Generator - Custom form per category that generates a photorealistic design prompt
+- WhatsApp Integration - Enquiry form sends details directly via WhatsApp
+- SEO Optimized - Sitemap, robots.txt, Open Graph, Twitter Cards, JSON-LD, canonical URLs
+- Analytics - Vercel Analytics + Speed Insights
+- Fully Responsive - Mobile-first design with optimized mobile text
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- React 19
+- CSS (Global)
+- Cloudinary (Image Uploads)
+- Vercel (Hosting and Analytics)
+
+## SEO Features
+
+- Dynamic sitemap.xml
+- robots.txt
+- Open Graph meta tags (Facebook, WhatsApp, LinkedIn)
+- Twitter Card meta tags
+- JSON-LD structured data (JewelryStore, BreadcrumbList, FAQPage)
+- Canonical URLs
+- Google Search Console verification
+- Semantic HTML structure
+- Mobile-optimized text
+- Fast loading with Next.js SSG
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
+`ash
+git clone https://github.com/Ambish-Verma/Maa-Ambey-Jewellers-Site.git
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open http://localhost:3000 to view the site.

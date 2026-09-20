@@ -20,7 +20,7 @@ const jost = Jost({
 
 export const metadata = {
   metadataBase: new URL("https://www.maaambeyjewellers.live"),
-  title: "Maa Ambey Jewellers | Liluah – Howrah",
+  title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery – Howrah",
   description:
     "Handcrafted custom gold & silver jewellery from Liluah, Howrah. Send your reference image via WhatsApp and we'll bring it to life. BIS Hallmarked. 22K Gold & 925 Silver.",
   keywords: [
@@ -35,7 +35,18 @@ export const metadata = {
     "925 silver",
     "bridal jewellery",
     "Maa Ambey Jewellers",
+    "custom gold ring Howrah",
+    "custom silver necklace Liluah",
+    "wedding jewellery Howrah",
+    "gold bangle designs",
+    "silver anklet Howrah",
+    "mangalsutra custom design",
+    "AI jewellery design",
   ],
+  authors: [{ name: "Maa Ambey Jewellers" }],
+  icons: {
+    icon: "/assets/icon.webp",
+  },
   alternates: {
     canonical: "https://www.maaambeyjewellers.live",
   },
@@ -56,7 +67,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Maa Ambey Jewellers — Custom Gold & Silver Jewellery in Howrah",
-        type: "image/jpeg",
+        type: "image/png",
       },
     ],
   },
