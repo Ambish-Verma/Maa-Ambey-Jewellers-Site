@@ -87,6 +87,14 @@ const businessSchema = {
     'https://schema.org/JewelryStore',
   ],
   keywords: 'jewellery shop near me, gold jewellery Howrah, silver jewellery Liluah, custom jewellery Howrah, best jeweller in Howrah, goldsmith Howrah, bridal jewellery Kolkata, BIS hallmarked gold, 22K gold jewellery, 925 silver jewellery, wedding jewellery Howrah, mangalsutra design, custom ring Howrah',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://www.maaambeyjewellers.live/?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
 }
 
 const breadcrumbSchema = {
