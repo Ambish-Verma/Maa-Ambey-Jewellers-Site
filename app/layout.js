@@ -104,7 +104,9 @@ export default function RootLayout({ children }) {
         <link rel="preload" href="/assets/icon.webp" as="image" type="image/webp" />
         <link rel="icon" href="/assets/icon.webp" type="image/webp" />
       </head>
-      <body suppressHydrationWarning>{children}<SpeedInsights /><Analytics /></body>
+      <body suppressHydrationWarning>{children}<SpeedInsights /><Analytics />
+        <script dangerouslySetInnerHTML={{ __html: "window.addEventListener('load', function() { window.scrollTo(0, 0); });" }} />
+      </body>
     </html>
   );
 }
