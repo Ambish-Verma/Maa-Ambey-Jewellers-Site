@@ -13,7 +13,7 @@ const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'JewelryStore',
   name: 'Maa Ambey Jewellers',
-  image: 'https://www.maaambeyjewellers.live/assets/og-image.png',
+  image: 'https://www.maaambeyjewellers.live/assets/og-image.jpg',
   url: 'https://www.maaambeyjewellers.live',
   telephone: '+919163395374',
   description:
