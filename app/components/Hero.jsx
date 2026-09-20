@@ -27,8 +27,8 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-split-title">
-            Maa Ambey Jewellers<br />
-            <em>Custom jewellery, made for you.</em>
+            Custom jewellery.<br />
+            <em>Made for you.</em>
           </h1>
 
           <p className="hero-split-sub">
