@@ -52,7 +52,7 @@ export const metadata = {
     url: "https://www.maaambeyjewellers.live",
     images: [
       {
-        url: "/assets/og-image.jpg",
+        url: "/assets/og-image.png",
         width: 1200,
         height: 630,
         alt: "Maa Ambey Jewellers — Custom Gold & Silver Jewellery in Howrah",
@@ -65,7 +65,7 @@ export const metadata = {
     title: "Maa Ambey Jewellers | Liluah – Howrah",
     description:
       "Your design, our craft. Send a reference image and we'll handcraft it in 22K gold & 925 silver.",
-    images: ["/assets/og-image.jpg"],
+    images: ["/assets/og-image.png"],
   },
   robots: {
     index: true,
