@@ -45,7 +45,7 @@ export const metadata = {
   openGraph: {
     title: "Maa Ambey Jewellers | Liluah – Howrah",
     description:
-      "Your design, our craft. Send a reference image and we'll handcraft it in gold or silver.",
+      "Your design, our craft. Send a reference image and we'll handcraft it.",
     type: "website",
     locale: "en_IN",
     siteName: "Maa Ambey Jewellers",
@@ -64,7 +64,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Maa Ambey Jewellers | Liluah – Howrah",
     description:
-      "Your design, our craft. Send a reference image and we'll handcraft it in 22K gold & 925 silver.",
+      "Your design, our craft. Send a reference image and we'll handcraft it.",
     images: ["/assets/og-image.png"],
   },
   robots: {
