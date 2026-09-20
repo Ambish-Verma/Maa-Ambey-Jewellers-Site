@@ -5,6 +5,7 @@ const trustItems = [
   'WhatsApp Order & Enquiry',
   '100% Transparency & Purity',
   'Handcrafted with Devotion',
+  'Delivering Across India',
   'Generations of Trust',
 ]
 

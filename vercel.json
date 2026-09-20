@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "maaambeyjewellers.live" }],
+      "destination": "https://www.maaambeyjewellers.live/:path*",
+      "permanent": true
+    }
+  ]
+}

@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section className="hero-split">
       <h1 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>
-        Maa Ambey Jewellers — Custom Gold & Silver Jewellery in Liluah, Howrah
+        Maa Ambey Jewellers — Custom Gold & Silver Jewellery in Liluah, Howrah, West Bengal
       </h1>
       <div className="hero-split-card">
         {/* Left: Image */}
@@ -27,17 +27,18 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-split-title">
-            Custom jewellery.<br />
-            <em>Made for you.</em>
+            Maa Ambey Jewellers<br />
+            <em>Custom jewellery, made for you.</em>
           </h1>
 
           <p className="hero-split-sub">
             Not online shopping &mdash;<br />
-            a personal jewellery-making experience.
+            A personal jewellery-making experience.
           </p>
 
           <p className="hero-split-desc">
-            Bring your idea, a sketch, or a reference photo. <span className="hide-mobile">We&rsquo;ll craft it in 22K gold or 925 silver.</span>
+            Bring your idea, a sketch, or a reference photo.<br />
+            <span className="hide-mobile">We&rsquo;ll craft it in 22K gold or 925 silver.</span>
           </p>
 
           <div className="hero-split-actions">

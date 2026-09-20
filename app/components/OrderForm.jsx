@@ -21,6 +21,8 @@ const metalOptions = ['22K Gold', '18K Gold', '14K Gold', '925 Silver', 'Not Sur
 export default function OrderForm() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [state, setState] = useState('')
+  const [city, setCity] = useState('')
   const [category, setCategory] = useState('')
   const [metal, setMetal] = useState('')
   const [budget, setBudget] = useState('')
@@ -34,6 +36,8 @@ export default function OrderForm() {
   const fileInputRef = useRef(null)
   const nameRef = useRef(null)
   const phoneRef = useRef(null)
+  const stateRef = useRef(null)
+  const cityRef = useRef(null)
 
   // --- Input handlers with real-time filtering ---
 
@@ -47,6 +51,18 @@ export default function OrderForm() {
     const val = e.target.value.replace(/[^0-9]/g, '').slice(0, 10)
     setPhone(val)
     if (errors.phone) setErrors(prev => ({ ...prev, phone: '' }))
+  }
+
+  const handleState = (e) => {
+    const val = e.target.value.replace(/[^a-zA-Z\s]/g, '').slice(0, 30)
+    setState(val)
+    if (errors.state) setErrors(prev => ({ ...prev, state: '' }))
+  }
+
+  const handleCity = (e) => {
+    const val = e.target.value.replace(/[^a-zA-Z\s]/g, '').slice(0, 30)
+    setCity(val)
+    if (errors.city) setErrors(prev => ({ ...prev, city: '' }))
   }
 
   const handleBudget = (e) => {
@@ -102,6 +118,9 @@ export default function OrderForm() {
     if (!phone.trim()) { missing.push('Phone Number'); if (!firstRef) firstRef = phoneRef }
     else if (phone.length !== 10) { setErrors({ phone: 'Enter a valid 10-digit phone number.' }); phoneRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return false }
 
+    if (!state.trim()) { missing.push('State'); if (!firstRef) firstRef = stateRef }
+    if (!city.trim()) { missing.push('City'); if (!firstRef) firstRef = cityRef }
+
     if (missing.length > 0) {
       setErrors({})
       setToast(`Please fill in: ${missing.join(', ')}`)
@@ -153,9 +172,11 @@ export default function OrderForm() {
       setSending(false)
     }
 
-    let msg = `*New Order Enquiry – Maa Ambey Jewellers*\n\n`
+    let msg = `*New Order – Maa Ambey Jewellers*\n\n`
     msg += `*Name:* ${name.trim()}\n`
     msg += `*Phone:* ${phone}\n`
+    msg += `*State:* ${state.trim()}\n`
+    msg += `*City:* ${city.trim()}\n`
     if (category) msg += `*Category:* ${category}\n`
     if (metal) msg += `*Metal:* ${metal}\n`
     if (budget) msg += `*Budget:* ₹${Number(budget).toLocaleString('en-IN')}\n`
@@ -210,7 +231,7 @@ export default function OrderForm() {
               {toast}
             </div>
           )}
-          <div className="form-title">Enquiry &amp; Order Form</div>
+          <div className="form-title">Order Form</div>
           <div className="form-sub">All messages are sent via WhatsApp for fastest response</div>
 
           <div className="form-row">
@@ -242,6 +263,35 @@ export default function OrderForm() {
               />
               {errors.phone && <div style={errorStyle}>{errors.phone}</div>}
               <div style={{ fontSize: '10px', color: 'var(--stone)', marginTop: '2px', textAlign: 'right' }}>{phone.length}/10</div>
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label>State *</label>
+              <input
+                ref={stateRef}
+                type="text"
+                placeholder="e.g. West Bengal"
+                value={state}
+                onChange={handleState}
+                maxLength={30}
+                style={errors.state ? { borderColor: '#e74c3c' } : {}}
+              />
+              {errors.state && <div style={errorStyle}>{errors.state}</div>}
+            </div>
+            <div className="form-group">
+              <label>City *</label>
+              <input
+                ref={cityRef}
+                type="text"
+                placeholder="e.g. Howrah"
+                value={city}
+                onChange={handleCity}
+                maxLength={30}
+                style={errors.city ? { borderColor: '#e74c3c' } : {}}
+              />
+              {errors.city && <div style={errorStyle}>{errors.city}</div>}
             </div>
           </div>
 

@@ -23,14 +23,14 @@ export async function generateMetadata({ params }) {
   const { category } = await params
   const title = categoryTitles[category] || category
   return {
-    title: `Design your ${title} | Maa Ambey Jewellers`,
-    description: `Create a custom ${title.toLowerCase()} design with AI. Choose metal, stones, style, and more. Handcrafted in 22K gold & 925 silver from Liluah, Howrah.`,
+    title: `Custom ${title} Design | Maa Ambey Jewellers — Liluah, Howrah`,
+    description: `Maa Ambey Jewellers — Design your custom ${title.toLowerCase()} with AI. Choose metal, stones, style, and more. Handcrafted in 22K gold & 925 silver from Liluah, Howrah.`,
     alternates: {
       canonical: `https://www.maaambeyjewellers.live/order/${category}`,
     },
     openGraph: {
-      title: `Design your ${title} | Maa Ambey Jewellers`,
-      description: `Create a custom ${title.toLowerCase()} design with AI. Handcrafted in 22K gold & 925 silver.`,
+      title: `Custom ${title} Design | Maa Ambey Jewellers — Liluah, Howrah`,
+      description: `Maa Ambey Jewellers — Create a custom ${title.toLowerCase()} design with AI. Handcrafted in 22K gold & 925 silver.`,
       url: `https://www.maaambeyjewellers.live/order/${category}`,
       images: [
         {
@@ -44,8 +44,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Design your ${title} | Maa Ambey Jewellers`,
-      description: `Create a custom ${title.toLowerCase()} design with AI. Handcrafted in 22K gold & 925 silver.`,
+      title: `Custom ${title} Design | Maa Ambey Jewellers — Liluah, Howrah`,
+      description: `Maa Ambey Jewellers — Create a custom ${title.toLowerCase()} design with AI. Handcrafted in 22K gold & 925 silver.`,
       images: ['/assets/og-image.png'],
     },
   }

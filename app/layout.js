@@ -22,7 +22,7 @@ export const metadata = {
   metadataBase: new URL("https://www.maaambeyjewellers.live"),
   title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery – Howrah",
   description:
-    "Handcrafted custom gold & silver jewellery from Liluah, Howrah. Send your reference image via WhatsApp and we'll bring it to life. BIS Hallmarked. 22K Gold & 925 Silver.",
+    "Maa Ambey Jewellers — Handcrafted custom gold & silver jewellery from Liluah, Howrah. Send your reference image via WhatsApp and we'll bring it to life. BIS Hallmarked. 22K Gold & 925 Silver.",
   keywords: [
     "gold jewellery",
     "silver jewellery",
@@ -68,7 +68,7 @@ export const metadata = {
   openGraph: {
     title: "Maa Ambey Jewellers | Liluah – Howrah",
     description:
-      "Your design, our craft. Send a reference image and we'll handcraft it.",
+      "Maa Ambey Jewellers — Your design, our craft. Send a reference image and we'll handcraft it in 22K gold or 925 silver.",
     type: "website",
     locale: "en_IN",
     siteName: "Maa Ambey Jewellers",
@@ -87,7 +87,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Maa Ambey Jewellers | Liluah – Howrah",
     description:
-      "Your design, our craft. Send a reference image and we'll handcraft it.",
+      "Maa Ambey Jewellers — Your design, our craft. Send a reference image and we'll handcraft it in 22K gold or 925 silver.",
     images: ["/assets/og-image.png"],
   },
   robots: {
@@ -101,7 +101,8 @@ export default function RootLayout({ children }) {
     <html lang="en-IN" className={`${cormorant.variable} ${jost.variable}`}>
       <head>
         <link rel="preload" href="/assets/hero-photo.webp" as="image" />
-        <link rel="preload" href="/assets/icon.webp" as="image" />
+        <link rel="preload" href="/assets/icon.webp" as="image" type="image/webp" />
+        <link rel="icon" href="/assets/icon.webp" type="image/webp" />
       </head>
       <body suppressHydrationWarning>{children}<SpeedInsights /><Analytics /></body>
     </html>

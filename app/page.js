@@ -1,6 +1,7 @@
 import NavWrapper from './components/NavWrapper'
 import Hero from './components/Hero'
 import TrustBar from './components/TrustBar'
+import DeliveryBanner from './components/DeliveryBanner'
 import Categories from './components/Categories'
 import Gallery from './components/Gallery'
 import HowItWorks from './components/HowItWorks'
@@ -9,12 +10,68 @@ import About from './components/About'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://www.maaambeyjewellers.live/#organization',
+  name: 'Maa Ambey Jewellers',
+  alternateName: 'Maa Ambey Jewellers Liluah Howrah',
+  url: 'https://www.maaambeyjewellers.live',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://www.maaambeyjewellers.live/assets/icon.webp',
+    width: 512,
+    height: 512,
+  },
+  image: 'https://www.maaambeyjewellers.live/assets/og-image.png',
+  description: 'Maa Ambey Jewellers - Handcrafted custom gold and silver jewellery from Liluah, Howrah. BIS Hallmarked. 22K Gold and 925 Silver.',
+  telephone: '+916291510356',
+  email: 'info@maaambeyjewellers.live',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '26/4, New 53 Sailen Dhar Road, Patuapara',
+    addressLocality: 'Liluah',
+    addressRegion: 'Howrah, West Bengal',
+    postalCode: '711204',
+    addressCountry: 'IN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 22.6301757,
+    longitude: 88.3381804,
+  },
+  sameAs: [
+    'https://www.facebook.com/maaambeyjewellers',
+    'https://www.instagram.com/maaambeyjewellers',
+    'https://www.youtube.com/@maaambeyjewellers',
+    'https://www.justdial.com/Howrah/Maa-Ambey-Jewellers-Liluah',
+    'https://www.sulekha.com/maa-ambey-jewellers-howrah',
+    'https://www.indiamart.com/maa-ambey-jewellers',
+  ],
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Maa Ambey Jewellers',
+  url: 'https://www.maaambeyjewellers.live',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://www.maaambeyjewellers.live/?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+}
+
 const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'JewelryStore',
   '@id': 'https://www.maaambeyjewellers.live/#business',
   name: 'Maa Ambey Jewellers',
   image: 'https://www.maaambeyjewellers.live/assets/og-image.png',
+  logo: 'https://www.maaambeyjewellers.live/assets/icon.webp',
   url: 'https://www.maaambeyjewellers.live',
   telephone: '+916291510356',
   whatsapp: '+916291510356',
@@ -52,6 +109,9 @@ const businessSchema = {
     'https://www.facebook.com/maaambeyjewellers',
     'https://www.instagram.com/maaambeyjewellers',
     'https://www.youtube.com/@maaambeyjewellers',
+    'https://www.justdial.com/Howrah/Maa-Ambey-Jewellers-Liluah',
+    'https://www.sulekha.com/maa-ambey-jewellers-howrah',
+    'https://www.indiamart.com/maa-ambey-jewellers',
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
@@ -87,14 +147,6 @@ const businessSchema = {
     'https://schema.org/JewelryStore',
   ],
   keywords: 'jewellery shop near me, gold jewellery Howrah, silver jewellery Liluah, custom jewellery Howrah, best jeweller in Howrah, goldsmith Howrah, bridal jewellery Kolkata, BIS hallmarked gold, 22K gold jewellery, 925 silver jewellery, wedding jewellery Howrah, mangalsutra design, custom ring Howrah',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: 'https://www.maaambeyjewellers.live/?q={search_term_string}',
-    },
-    'query-input': 'required name=search_term_string',
-  },
 }
 
 const breadcrumbSchema = {
@@ -161,6 +213,18 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c'),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema).replace(/</g, '\\u003c'),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
           __html: JSON.stringify(businessSchema).replace(/</g, '\\u003c'),
         }}
       />
@@ -179,6 +243,7 @@ export default function Home() {
       <NavWrapper />
       <Hero />
       <TrustBar />
+      <DeliveryBanner />
       <Categories />
       <Gallery />
       <HowItWorks />
