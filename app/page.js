@@ -104,7 +104,7 @@ const businessSchema = {
     { '@type': 'City', name: 'Ulubaria' },
     { '@type': 'City', name: 'Amta' },
   ],
-  hasMap: 'https://maps.google.com/?q=22.6301757,88.3381804',
+  hasMap: 'https://www.google.com/maps/place/MAA+AMBEY+JEWELLERS/@22.6301875,88.3333141,17z/data=!4m14!1m7!3m6!1s0x39f89de6c22aa901:0xddb00c4ef43ba046!2sMAA+AMBEY+JEWELLERS!8m2!3d22.6301876!4d88.338185!16s%2Fg%2F11qn9xj0w9!3m5!1s0x39f89de6c22aa901:0xddb00c4ef43ba046!8m2!3d22.6301876!4d88.338185!16s%2Fg%2F11qn9xj0w9?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D',
   sameAs: [
     'https://www.facebook.com/maaambeyjewellers',
     'https://www.instagram.com/maaambeyjewellers',
