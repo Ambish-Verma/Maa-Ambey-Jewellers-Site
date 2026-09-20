@@ -8,10 +8,12 @@ export default function About() {
           <div className="about-section-label">Our Story</div>
           <h2 className="about-title">A legacy of <em>fine craft</em></h2>
           <p className="about-text">
-            Maa Ambey Jewellers is based in Liluah, Howrah, creating gold and silver jewellery with care, honest guidance, and skilled craftsmanship. Every piece is handled with respect, from your first design idea to the final finish.
+            <span className="hide-mobile">Maa Ambey Jewellers is based in Liluah, Howrah, creating gold and silver jewellery with care, honest guidance, and skilled craftsmanship. Every piece is handled with respect, from your first design idea to the final finish.</span>
+            <span className="show-inline-mobile">Maa Ambey Jewellers — Liluah, Howrah. Gold &amp; silver jewellery crafted with care and skilled craftsmanship.</span>
           </p>
           <p className="about-text">
-            We specialize in custom-made jewellery — you bring the vision, we bring the craft. From bridal sets to everyday elegance, in gold and silver, plain and stone-set.
+            <span className="hide-mobile">We specialize in custom-made jewellery — you bring the vision, we bring the craft. From bridal sets to everyday elegance, in gold and silver, plain and stone-set.</span>
+            <span className="show-inline-mobile">Custom-made jewellery — bridal sets to everyday elegance.</span>
           </p>
           <div style={{ display: 'flex', gap: '2rem', marginTop: '2rem' }}>
             <div>

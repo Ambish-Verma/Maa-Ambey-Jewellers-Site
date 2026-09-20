@@ -173,7 +173,7 @@ nav {
 
 .hero-split-image {
   position: relative;
-  background: url('/assets/custom-jewellery-hero-photo.png') center/cover no-repeat;
+  background: url('/assets/custom-jewellery-hero-photo-1.png') center/cover no-repeat;
   background-color: var(--ink-mid);
   display: flex;
   align-items: flex-start;
@@ -1409,7 +1409,7 @@ footer {
   }
 
   .section-title {
-    font-size: clamp(32px, 11vw, 42px);
+    font-size: clamp(26px, 8vw, 42px);
   }
 
   .section-desc {

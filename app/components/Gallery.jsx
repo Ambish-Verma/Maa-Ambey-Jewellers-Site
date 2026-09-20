@@ -19,7 +19,8 @@ export default function Gallery() {
         <div className="section-label">Our Craftsmanship</div>
         <h2 className="section-title">The <em>artisan's</em> hand</h2>
         <p className="section-desc">
-          Every piece is handcrafted with precision. Upload your reference image and we'll bring it to life.
+          <span className="hide-mobile">Every piece is handcrafted with precision. Upload your reference image and we&rsquo;ll bring it to life.</span>
+          <span className="show-inline-mobile">Every piece, handcrafted with precision.</span>
         </p>
       </div>
       <div className="gallery-grid">

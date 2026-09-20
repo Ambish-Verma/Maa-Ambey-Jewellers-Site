@@ -181,7 +181,8 @@ export default function OrderForm() {
           <div className="section-label">Custom Orders</div>
           <h2 className="section-title">Place your <em>order</em></h2>
           <p className="section-desc">
-            Fill the quick form and we'll send your enquiry directly to our WhatsApp. No waiting — instant connection with our craftsmen.
+            <span className="hide-mobile">Fill the quick form and we&rsquo;ll send your enquiry directly to our WhatsApp. No waiting &mdash; instant connection with our craftsmen.</span>
+            <span className="show-inline-mobile">Fill the form, we&rsquo;ll send it via WhatsApp.</span>
           </p>
           <div className="divider">
             <div className="divider-diamond"></div>
