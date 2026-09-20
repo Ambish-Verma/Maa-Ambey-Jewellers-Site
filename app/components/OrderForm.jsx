@@ -29,8 +29,11 @@ export default function OrderForm() {
   const [preview, setPreview] = useState(null)
   const [sending, setSending] = useState(false)
   const [errors, setErrors] = useState({})
+  const [toast, setToast] = useState('')
   const fileRef = useRef(null)
   const fileInputRef = useRef(null)
+  const nameRef = useRef(null)
+  const phoneRef = useRef(null)
 
   // --- Input handlers with real-time filtering ---
 
@@ -90,16 +93,25 @@ export default function OrderForm() {
   // --- Validation on submit ---
 
   const validate = () => {
-    const newErrors = {}
+    const missing = []
+    let firstRef = null
 
-    if (!name.trim()) newErrors.name = 'Name is required.'
-    else if (name.trim().length < 2) newErrors.name = 'Name must be at least 2 characters.'
+    if (!name.trim()) { missing.push('Name'); if (!firstRef) firstRef = nameRef }
+    else if (name.trim().length < 2) { setErrors({ name: 'Name must be at least 2 characters.' }); nameRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return false }
 
-    if (!phone.trim()) newErrors.phone = 'Phone number is required.'
-    else if (phone.length !== 10) newErrors.phone = 'Enter a valid 10-digit phone number.'
+    if (!phone.trim()) { missing.push('Phone Number'); if (!firstRef) firstRef = phoneRef }
+    else if (phone.length !== 10) { setErrors({ phone: 'Enter a valid 10-digit phone number.' }); phoneRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' }); return false }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
+    if (missing.length > 0) {
+      setErrors({})
+      setToast(`Please fill in: ${missing.join(', ')}`)
+      setTimeout(() => setToast(''), 4000)
+      firstRef?.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return false
+    }
+
+    setErrors({})
+    return true
   }
 
   // --- Cloudinary upload ---
@@ -181,7 +193,22 @@ export default function OrderForm() {
             </div>
           </div>
         </div>
-        <div className="form-wrap">
+        <div className="form-wrap" style={{ position: 'relative' }}>
+          {toast && (
+            <div style={{
+              position: 'absolute', top: '-52px', left: 0, right: 0,
+              background: '#e74c3c', color: '#fff', padding: '12px 18px',
+              borderRadius: '6px', fontSize: '13px', fontWeight: 500,
+              fontFamily: 'var(--sans)', display: 'flex', alignItems: 'center',
+              gap: '10px', boxShadow: '0 4px 16px rgba(231,76,60,0.3)',
+              zIndex: 10, animation: 'slideDown 0.3s ease',
+            }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              {toast}
+            </div>
+          )}
           <div className="form-title">Enquiry &amp; Order Form</div>
           <div className="form-sub">All messages are sent via WhatsApp for fastest response</div>
 
@@ -189,6 +216,7 @@ export default function OrderForm() {
             <div className="form-group">
               <label>Your Name *</label>
               <input
+                ref={nameRef}
                 type="text"
                 placeholder="Full name"
                 value={name}
@@ -202,6 +230,7 @@ export default function OrderForm() {
             <div className="form-group">
               <label>Phone Number *</label>
               <input
+                ref={phoneRef}
                 type="tel"
                 placeholder="9876543210"
                 value={phone}

@@ -1,30 +1,89 @@
 export default function Hero() {
   return (
-    <section className="hero">
-      <div className="hero-bg"></div>
+    <section className="hero-split">
+      <div className="hero-split-card">
+        {/* Left: Image */}
+        <div className="hero-split-image">
+        <div className="hero-split-image-overlay"></div>
+        <div className="hero-split-image-text">
+          <div className="hero-split-image-line"></div>
+          <span>FROM IDEA<br />TO HEIRLOOM</span>
+          <div className="hero-split-image-line"></div>
+        </div>
+      </div>
 
-      {/* Decorative Elements */}
-      <div className="hero-glow hero-glow-1"></div>
-      <div className="hero-glow hero-glow-2"></div>
-      <div className="hero-star" style={{ top: '15%', left: '10%', fontSize: '20px', animationDelay: '0s' }}>✦</div>
-      <div className="hero-star" style={{ top: '75%', right: '12%', fontSize: '32px', animationDelay: '1.5s' }}>✦</div>
-      <div className="hero-star" style={{ top: '25%', right: '8%', fontSize: '14px', animationDelay: '3s' }}>✦</div>
-      <div className="hero-star" style={{ top: '85%', left: '15%', fontSize: '18px', animationDelay: '0.7s' }}>✦</div>
+        {/* Right: Content */}
+        <div className="hero-split-content">
+        <div className="hero-split-inner">
+          <div className="hero-eyebrow">
+            <span>Your Idea</span>
+            <span className="hero-dot">&#9679;</span>
+            <span>Our Craft</span>
+            <span className="hero-dot">&#9679;</span>
+            <span>Timeless Jewellery</span>
+          </div>
 
-      <div className="hero-content">
-        <div className="hero-eyebrow">Your Design, Our Craft</div>
-        <h1 className="hero-title">Crafted for<br /><em>every occasion</em></h1>
-        <p className="hero-sub">
-          Send us your reference image. We'll handcraft it in gold or silver exactly as you envision.
-        </p>
-        <div className="hero-actions">
-          <a href="#order" className="btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-            Place Custom Order
-          </a>
-          <a href="#gallery" className="btn-outline">View Our Work</a>
+          <h1 className="hero-split-title">
+            Custom jewellery.<br />
+            <em>Made for you.</em>
+          </h1>
+
+          <p className="hero-split-sub">
+            Not online shopping &mdash;<br />
+            a personal jewellery-making experience.
+          </p>
+
+          <p className="hero-split-desc">
+            Bring your idea, a sketch, or a reference photo. We&rsquo;ll craft it in 22K gold or 925 silver.
+          </p>
+
+          <div className="hero-split-actions">
+            <a href="/#order" className="btn-primary hero-split-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" />
+              </svg>
+              Start Your Design
+            </a>
+            <a href="/#gallery" className="btn-outline hero-split-btn">View Our Craft</a>
+          </div>
+
+          {/* Steps */}
+          <div className="hero-split-steps">
+            <div className="hero-step">
+              <span className="hero-step-num">01</span>
+              <div className="hero-step-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" /><line x1="21.17" y1="8" x2="12" y2="8" /><line x1="3.95" y1="6.06" x2="8.54" y2="14" /><line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+                </svg>
+              </div>
+              <span className="hero-step-text">Choose<br />your piece</span>
+            </div>
+            <div className="hero-step-divider"></div>
+            <div className="hero-step">
+              <span className="hero-step-num">02</span>
+              <div className="hero-step-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" />
+                </svg>
+              </div>
+              <span className="hero-step-text">Share<br />your idea</span>
+            </div>
+            <div className="hero-step-divider"></div>
+            <div className="hero-step">
+              <span className="hero-step-num">03</span>
+              <div className="hero-step-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+                </svg>
+              </div>
+              <span className="hero-step-text">We craft<br />it for you</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Decorative star */}
+        <div className="hero-star" style={{ top: '8%', right: '5%', fontSize: '18px' }}>&#10022;</div>
+        <div className="hero-star" style={{ bottom: '15%', right: '3%', fontSize: '12px', animationDelay: '1.5s' }}>&#10022;</div>
         </div>
       </div>
     </section>

@@ -619,7 +619,9 @@ export default function OrderFormClient({ category }) {
   const [motif, setMotif] = useState('')
   const [extraValues, setExtraValues] = useState({})
   const [refImages, setRefImages] = useState([])
+  const [toast, setToast] = useState('')
   const fileInputRef = useRef(null)
+  const metalRef = useRef(null)
 
   const filteredOccasionForOptions = useMemo(() => {
     const mapKey = category
@@ -703,6 +705,12 @@ export default function OrderFormClient({ category }) {
   }
 
   const generateDesign = () => {
+    if (!metal) {
+      setToast('Please select a Metal Type before generating a design.')
+      setTimeout(() => setToast(''), 4000)
+      metalRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return
+    }
     let prompt = `Create a detailed, photorealistic jewellery design for a ${config.title}.`
     if (metal) prompt += ` Metal: ${metal}.`
     if (stone && stone !== 'No Stones (Plain Gold/Silver)') prompt += ` Stones: ${stone}.`
@@ -758,7 +766,22 @@ export default function OrderFormClient({ category }) {
 
       <section style={{ paddingTop: 0, paddingBottom: '4rem', background: 'var(--cream)' }}>
         <div style={{ maxWidth: '780px', margin: '0 auto', padding: '0 2rem' }}>
-          <div className="form-wrap" style={{ padding: '2.5rem' }}>
+          <div className="form-wrap" style={{ padding: '2.5rem', position: 'relative' }}>
+            {toast && (
+              <div style={{
+                position: 'absolute', top: '-52px', left: 0, right: 0,
+                background: '#e74c3c', color: '#fff', padding: '12px 18px',
+                borderRadius: '6px', fontSize: '13px', fontWeight: 500,
+                fontFamily: 'var(--sans)', display: 'flex', alignItems: 'center',
+                gap: '10px', boxShadow: '0 4px 16px rgba(231,76,60,0.3)',
+                zIndex: 10, animation: 'slideDown 0.3s ease',
+              }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                {toast}
+              </div>
+            )}
 
             {/* SECTION: Material */}
             <div style={{ marginBottom: '1.5rem' }}>
@@ -766,7 +789,9 @@ export default function OrderFormClient({ category }) {
                 Material & Stones
               </div>
               <div className="form-row">
-                <SearchableSelect label="Metal Type *" value={metal} onChange={setMetal} options={metalOptions} placeholder="Select metal" />
+                <div ref={metalRef}>
+                  <SearchableSelect label="Metal Type *" value={metal} onChange={setMetal} options={metalOptions} placeholder="Select metal" />
+                </div>
                 <SearchableSelect label="Stones / Gemstones" value={stone} onChange={setStone} options={stoneOptions} placeholder="Select stone" />
               </div>
               <div className="form-row">

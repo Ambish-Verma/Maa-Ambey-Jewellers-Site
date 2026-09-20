@@ -20,7 +20,7 @@ const jost = Jost({
 
 export const metadata = {
   metadataBase: new URL("https://www.maaambeyjewellers.live"),
-  title: "Maa Ambey Jewellers | Custom Gold & Silver Jewellery – Howrah",
+  title: "Maa Ambey Jewellers | Liluah – Howrah",
   description:
     "Handcrafted custom gold & silver jewellery from Liluah, Howrah. Send your reference image via WhatsApp and we'll bring it to life. BIS Hallmarked. 22K Gold & 925 Silver.",
   keywords: [
