@@ -8,5 +8,6 @@ export default function robots() {
       },
     ],
     sitemap: 'https://www.maaambeyjewellers.live/sitemap.xml',
+    host: 'https://www.maaambeyjewellers.live',
   }
 }

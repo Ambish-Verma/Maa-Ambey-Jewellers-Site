@@ -1,0 +1,81 @@
+# Maa Ambey Jewellers - Full Site Information
+
+## Company Overview
+
+Maa Ambey Jewellers is a custom jewellery shop located in Liluah, Howrah, West Bengal, India. We specialise in handcrafting gold (22K) and silver (925 sterling) jewellery based on customer designs, sketches, or reference images. Our process combines traditional craftsmanship with modern AI design tools.
+
+## Products and Services
+
+### Custom Jewellery Categories
+
+We offer custom crafting across 12 jewellery categories:
+
+1. **Rings** — Custom gold and silver rings including engagement rings, daily wear, and statement pieces
+2. **Necklaces** — Chokers, chains with pendants, heavy necklaces, and layered designs
+3. **Earrings** — Studs, drops, jhumkas, chandbalis, and modern designs
+4. **Bangles** — Plain gold bangles, designer bangles, kangan styles
+5. **Chains** — Gold and silver chains in various thicknesses and styles
+6. **Pendants** — Religious, modern, and custom pendant designs
+7. **Kadas and Bracelets** — Traditional kadas, modern bracelets, and fusion designs
+8. **Maang Tikka** — Bridal and festive head jewellery
+9. **Nose Pins** — Nath designs, studs, and traditional nose jewellery
+10. **Anklets** — Silver payal and gold anklet designs
+11. **Mangalsutra** — Traditional and modern mangalsutra designs
+12. **Bridal Sets** — Complete bridal jewellery sets including necklace, earrings, maang tikka, bangles
+
+### Materials
+
+- **22K Gold** — BIS hallmarked gold jewellery
+- **925 Sterling Silver** — Pure sterling silver jewellery
+- **Gemstones** — Diamonds, rubies, emeralds, pearls, and semi-precious stones
+- **Gemstone options** — Polki, kundan, meenakari, and stone-studded designs
+
+### Design Process
+
+Customers can use our AI-powered design tool:
+1. Select a jewellery category
+2. Choose metal type (Gold/Silver), stones, surface finish, design motif
+3. Add category-specific details (ring size, necklace length, etc.)
+4. Specify occasion and who it is for
+5. Click "Generate Design" which creates a prompt for ChatGPT DALL-E to generate a photorealistic preview
+6. Share the generated design on WhatsApp for pricing and confirmation
+
+### Ordering Process
+
+All orders are handled via WhatsApp:
+1. Generate or share a design reference
+2. Our team reviews and provides a price estimate
+3. Upon confirmation, our goldsmiths handcraft the piece
+4. Quality check with BIS hallmarking (for gold)
+5. Delivery or in-store pickup
+
+## Shop Information
+
+- **Name:** Maa Ambey Jewellers
+- **Phone:** +91 62915 10356
+- **Address:** 26/4, New 53 Sailen Dhar Road, Patuapara, Liluah, Howrah - 711204, West Bengal, India
+- **Coordinates:** 22.6301757, 88.3381804
+- **Shop Hours:** Tuesday to Sunday, 10:00 AM - 1:00 PM and 6:00 PM - 9:00 PM
+- **Closed:** Mondays
+- **Website:** https://www.maaambeyjewellers.live
+
+## Pricing
+
+Pricing depends on:
+- Metal type and weight (gold price per gram + making charges)
+- Stone type and quality
+- Design complexity
+- Estimated starting price: Rs. 5,000 for simple silver pieces, Rs. 15,000+ for gold pieces
+
+## Location Details
+
+Our shop is in Liluah, which is part of Howrah district in West Bengal. Howrah is connected to Kolkata via Howrah Bridge and multiple railway stations. The nearest major railway station is Howrah Junction.
+
+## Key Facts
+
+- BIS Hallmarked gold jewellery
+- Custom handcrafted pieces
+- AI design preview tool
+- WhatsApp-based ordering
+- Experienced goldsmiths
+- Serves Howrah, Kolkata, and surrounding areas
