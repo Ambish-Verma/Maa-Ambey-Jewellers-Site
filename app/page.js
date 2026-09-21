@@ -244,8 +244,8 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <DeliveryBanner />
-      <Categories />
       <Gallery />
+      <Categories />
       <HowItWorks />
       <OrderForm />
       <About />

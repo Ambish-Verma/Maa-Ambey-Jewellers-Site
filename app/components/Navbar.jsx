@@ -30,8 +30,8 @@ export default function Navbar({ menuOpen, toggleMenu }) {
           </div>
         </a>
         <ul className="nav-links">
-          <li><a href="/" onClick={(e) => scrollToSection(e, '/#categories', pathname, router)}>Get Design Idea</a></li>
           <li><a href="/" onClick={(e) => scrollToSection(e, '/#gallery', pathname, router)}>Gallery</a></li>
+          <li><a href="/" onClick={(e) => scrollToSection(e, '/#categories', pathname, router)}>Get Design Idea</a></li>
           <li><a href="/" onClick={(e) => scrollToSection(e, '/#how-it-works', pathname, router)}>How It Works</a></li>
           <li><a href="/" onClick={(e) => scrollToSection(e, '/#about', pathname, router)}>About</a></li>
           <li><a href="/" className="nav-cta" onClick={(e) => scrollToSection(e, '/#order', pathname, router)}>Order Now</a></li>

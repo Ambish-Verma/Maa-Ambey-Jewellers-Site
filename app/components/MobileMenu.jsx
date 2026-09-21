@@ -23,8 +23,8 @@ export default function MobileMenu({ menuOpen, closeMenu }) {
   return (
     <div className={`mobile-menu${menuOpen ? ' active' : ''}`} id="mobile-menu">
       <div className="mobile-menu-inner">
-        <a href="/" className="mobile-link" onClick={(e) => scrollToSection(e, '/#categories', pathname, router, closeMenu)}>Get Design Idea</a>
         <a href="/" className="mobile-link" onClick={(e) => scrollToSection(e, '/#gallery', pathname, router, closeMenu)}>Gallery</a>
+        <a href="/" className="mobile-link" onClick={(e) => scrollToSection(e, '/#categories', pathname, router, closeMenu)}>Get Design Idea</a>
         <a href="/" className="mobile-link" onClick={(e) => scrollToSection(e, '/#how-it-works', pathname, router, closeMenu)}>How It Works</a>
         <a href="/" className="mobile-link" onClick={(e) => scrollToSection(e, '/#about', pathname, router, closeMenu)}>About</a>
         <a href="/" className="nav-cta mobile-link" onClick={(e) => scrollToSection(e, '/#order', pathname, router, closeMenu)}>
