@@ -85,7 +85,7 @@ export default function LeadModal() {
     <div className="lead-overlay" onClick={close}>
       <div className="lead-modal" onClick={(e) => e.stopPropagation()}>
         <button className="lead-close" onClick={close} aria-label="Close">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
@@ -155,6 +155,19 @@ export default function LeadModal() {
                 </div>
 
                 <div className="lead-form-group">
+                  <label>City *</label>
+                  <div className="lead-input-wrap">
+                    <span className="lead-input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+                      </svg>
+                    </span>
+                    <input type="text" placeholder="e.g. Howrah" value={city} onChange={handleCity} maxLength={30} style={errors.city ? { borderColor: '#e74c3c' } : {}} />
+                  </div>
+                  {errors.city && <div className="lead-error">{errors.city}</div>}
+                </div>
+
+                <div className="lead-form-group">
                   <div className="lead-label-row">
                     <label>Email <span className="lead-optional">(optional)</span></label>
                     <span className="lead-privacy-note">We respect your privacy. No spam — only exclusive deals.</span>
@@ -169,34 +182,21 @@ export default function LeadModal() {
                   </div>
                 </div>
 
-                <div className="lead-form-row">
-                  <div className="lead-form-group">
-                    <label>City *</label>
-                    <div className="lead-input-wrap">
-                      <span className="lead-input-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
-                        </svg>
-                      </span>
-                      <input type="text" placeholder="e.g. Howrah" value={city} onChange={handleCity} maxLength={30} />
-                    </div>
-                  </div>
-                  <div className="lead-form-group">
-                    <label>Interested In</label>
-                    <div className="lead-input-wrap lead-select-wrap">
-                      <span className="lead-input-icon">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M6 3h12l4 6-10 13L2 9z" />
-                        </svg>
-                      </span>
-                      <select value={interest} onChange={(e) => setInterest(e.target.value)}>
-                        <option value="">Select</option>
-                        <option value="Gold Jewellery">Gold</option>
-                        <option value="Silver Jewellery">Silver</option>
-                        <option value="Both">Both</option>
-                        <option value="Custom Design">Custom Design</option>
-                      </select>
-                    </div>
+                <div className="lead-form-group">
+                  <label>Interested In <span className="lead-optional">(optional)</span></label>
+                  <div className="lead-input-wrap lead-select-wrap">
+                    <span className="lead-input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M6 3h12l4 6-10 13L2 9z" />
+                      </svg>
+                    </span>
+                    <select value={interest} onChange={(e) => setInterest(e.target.value)}>
+                      <option value="">Select</option>
+                      <option value="Gold Jewellery">Gold</option>
+                      <option value="Silver Jewellery">Silver</option>
+                      <option value="Both">Both</option>
+                      <option value="Custom Design">Custom Design</option>
+                    </select>
                   </div>
                 </div>
 
