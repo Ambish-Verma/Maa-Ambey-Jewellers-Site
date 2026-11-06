@@ -1,6 +1,7 @@
 ﻿'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function LeadModal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -91,7 +92,14 @@ export default function LeadModal() {
         </button>
 
         <div className="lead-modal-left">
-          <img src="/assets/modal.png" alt="Exclusive Jewellery Offers" className="lead-modal-left-img" />
+          <Image
+            src="/assets/modal.png"
+            alt="Exclusive Jewellery Offers"
+            fill
+            sizes="(max-width: 480px) 100vw, 50vw"
+            quality={70}
+            className="lead-modal-left-img"
+          />
           <div className="lead-modal-left-overlay"></div>
           <div className="lead-modal-left-content">
             <div className="lead-modal-badge">Exclusive For You</div>

@@ -173,7 +173,6 @@ nav {
 
 .hero-split-image {
   position: relative;
-  background: url('/assets/hero-photo.webp') center/cover no-repeat;
   background-color: var(--ink-mid);
   display: flex;
   align-items: flex-start;
@@ -183,15 +182,21 @@ nav {
   overflow: hidden;
 }
 
+.hero-split-image-img {
+  object-fit: cover;
+  z-index: 0;
+}
+
 .hero-split-image-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(135deg, rgba(26,18,8,0.45) 0%, rgba(26,18,8,0.1) 50%, transparent 100%);
 }
 
 .hero-split-image-text {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -2232,15 +2237,15 @@ footer {
 
 @media (max-width: 480px) {
   .lead-overlay {
-    padding: 0;
-    align-items: flex-end;
+    padding: 1rem;
+    align-items: center;
   }
 
   .lead-modal {
     width: 100%;
-    border-radius: 16px 16px 0 0;
-    max-height: 92vh;
-    max-height: 92dvh;
+    border-radius: 16px;
+    max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
     animation: modalSlideUp 0.35s ease;
   }
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter, usePathname } from 'next/navigation'
+import Image from 'next/image'
 
 function smoothScroll(e, href, pathname, router) {
   e.preventDefault()
@@ -25,6 +26,15 @@ export default function Hero() {
       <div className="hero-split-card">
         {/* Left: Image */}
         <div className="hero-split-image">
+        <Image
+          src="/assets/hero-photo.webp"
+          alt=""
+          fill
+          preload
+          sizes="(max-width: 768px) 100vw, 50vw"
+          quality={75}
+          className="hero-split-image-img"
+        />
         <div className="hero-split-image-overlay"></div>
         <div className="hero-split-image-text">
           <div className="hero-split-image-line"></div>

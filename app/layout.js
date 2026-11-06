@@ -102,7 +102,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-IN" className={`${cormorant.variable} ${jost.variable}`}>
       <head>
-        <link rel="preload" href="/assets/hero-photo.webp" as="image" />
         <link rel="preload" href="/assets/icon.webp" as="image" type="image/webp" />
         <link rel="icon" href="/assets/icon.webp" type="image/webp" />
       </head>
