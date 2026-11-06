@@ -1602,7 +1602,7 @@ footer {
 
   .form-wrap {
     padding: 1.5rem;
-    /* text-align: left; */
+    text-align: left;
   }
 
   .form-group input,
