@@ -34,11 +34,11 @@ export async function generateMetadata({ params }) {
       url: `https://www.maaambeyjewellers.live/order/${category}`,
       images: [
         {
-          url: '/assets/og-image.png',
+          url: '/assets/og-image.jpg',
           width: 1200,
           height: 630,
           alt: `Maa Ambey Jewellers — Custom ${title} Design`,
-          type: 'image/png',
+          type: 'image/jpeg',
         },
       ],
     },
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `Custom ${title} Design | Maa Ambey Jewellers — Liluah, Howrah`,
       description: `Maa Ambey Jewellers — Create a custom ${title.toLowerCase()} design with AI. Handcrafted in 22K gold & 925 silver.`,
-      images: ['/assets/og-image.png'],
+      images: ['/assets/og-image.jpg'],
     },
   }
 }
